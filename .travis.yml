@@ -15,8 +15,6 @@ env:
   # https://docs.travis-ci.com/user/customizing-the-build/#Build-Matrix
   matrix:
     - TEST_COMMAND=build
-    - TEST_COMMAND=visual
-    - TEST_COMMAND=coverage
 
 # https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Node.js-v4-(or-io.js-v3)-compiler-requirements
 addons:
@@ -35,9 +33,7 @@ before_install:
   - npm install -g @blackbaud/skyux-cli
   - export SAVAGE_BRANCH="^savage-"
   - chmod +x ./scripts/travis-script-build.sh
-  - chmod +x ./scripts/travis-script-coverage.sh
   - chmod +x ./scripts/travis-script-deploy.sh
-  - chmod +x ./scripts/travis-script-visual.sh
   - chmod +x ./scripts/travis-after-failure.sh
   - chmod +x ./scripts/browserstack-cleanup.sh
   - chmod +x ./scripts/browserstack-local-start.sh
