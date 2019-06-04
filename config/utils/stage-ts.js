@@ -46,7 +46,6 @@ function writeTSConfig() {
       "baseUrl": "."
     },
     "files": [
-      "core.ts",
       "demo.ts"
     ],
     "exclude": [

@@ -1,4 +1,4 @@
-import rollupConfig from './rollup.config.js';
+import rollupConfig from './rollup.demo.config.js';
 import uglify from 'rollup-plugin-uglify';
 
 var minConfig = rollupConfig;
