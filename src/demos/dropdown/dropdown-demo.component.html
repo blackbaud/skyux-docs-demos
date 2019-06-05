@@ -153,7 +153,7 @@
 <p>
   <button
     type="button"
-    class="sky-btn sky-btn-default"
+    class="sky-btn sky-btn-default sky-margin-inline-default"
     (click)="openDropdown()"
   >
     Open dropdown
@@ -161,7 +161,7 @@
 
   <button
     type="button"
-    class="sky-btn sky-btn-default"
+    class="sky-btn sky-btn-default sky-margin-inline-default"
     (click)="closeDropdown()"
   >
     Close dropdown
@@ -169,7 +169,7 @@
 
   <button
     type="button"
-    class="sky-btn sky-btn-default"
+    class="sky-btn sky-btn-default sky-margin-inline-default"
     (click)="focusTriggerButton()"
   >
     Focus trigger button
@@ -177,7 +177,7 @@
 
   <button
     type="button"
-    class="sky-btn sky-btn-default"
+    class="sky-btn sky-btn-default sky-margin-inline-default"
     (click)="focusNextItem()"
   >
     Focus next item
@@ -185,7 +185,7 @@
 
   <button
     type="button"
-    class="sky-btn sky-btn-default"
+    class="sky-btn sky-btn-default sky-margin-inline-default"
     (click)="focusPreviousItem()"
   >
     Focus previous item
@@ -193,12 +193,13 @@
 
   <button
     type="button"
-    class="sky-btn sky-btn-default"
+    class="sky-btn sky-btn-default sky-margin-inline-default"
     (click)="changeItems()"
   >
     Change items
   </button>
 </p>
+
 <sky-dropdown
   buttonStyle="primary"
   [dismissOnBlur]="false"
@@ -222,6 +223,7 @@
     </sky-dropdown-item>
   </sky-dropdown-menu>
 </sky-dropdown>
+
 <p>
   This menu does not bring the active items to focus; this is useful for custom implementations where the focus should remain on a different control.
 </p>
