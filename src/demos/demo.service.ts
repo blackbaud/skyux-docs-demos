@@ -775,6 +775,15 @@ export class SkyDemoService {
         {
           name: 'modal-demo-context.ts',
           fileContents: require('!!raw-loader!./modal/modal-demo-context.ts')
+        },
+        {
+          name: 'modal-demo-close-confirmation.component.ts',
+          fileContents: require('!!raw-loader!./modal/modal-demo-close-confirmation.component.ts'),
+          componentName: 'SkyModalDemoCloseConfirmationComponent'
+        },
+        {
+          name: 'modal-demo-close-confirmation.component.html',
+          fileContents: require('!!raw-loader!./modal/modal-demo-close-confirmation.component.html')
         }
       ]
     },
