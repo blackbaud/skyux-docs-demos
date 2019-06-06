@@ -1,3 +1,7 @@
+# 1.0.0-alpha.4 (2019-06-06)
+
+- Added support for `@skyux-sdk/builder`.
+
 # 1.0.0-alpha.3 (2019-06-05)
 
 - Added `.sky-margin-inline-default` to all demo button elements.
