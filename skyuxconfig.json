@@ -2,5 +2,11 @@
   "$schema": "./node_modules/@skyux/config/skyuxconfig-schema.json",
   "name": "skyux2",
   "mode": "easy",
-  "compileMode": "aot"
+  "compileMode": "aot",
+  "app": {
+    "styles": [
+      "@skyux/theme/css/sky.css"
+    ]
+  },
+  "plugins": []
 }
