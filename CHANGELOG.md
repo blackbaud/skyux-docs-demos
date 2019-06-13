@@ -1,3 +1,7 @@
+# 1.0.0-alpha.5 (2019-06-13)
+
+- Added an instance of the `sky-repeater-item-context-menu` component to the repeater component demo. [#3](https://github.com/blackbaud/skyux2-demos/pull/3)
+
 # 1.0.0-alpha.4 (2019-06-06)
 
 - Added support for `@skyux-sdk/builder`.
