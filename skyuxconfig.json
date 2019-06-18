@@ -3,5 +3,10 @@
   "name": "skyux2",
   "mode": "easy",
   "compileMode": "aot",
-  "importPath": "src"
+  "app": {
+    "styles": [
+      "@skyux/theme/css/sky.css"
+    ]
+  },
+  "plugins": []
 }
