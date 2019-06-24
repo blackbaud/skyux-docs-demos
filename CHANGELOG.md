@@ -1,3 +1,7 @@
+# 1.0.1 (2019-06-24)
+
+- Fixed flyout demo's button to use inline style. [#5](https://github.com/blackbaud/skyux2-demos/pull/5)
+
 # 1.0.0 (2019-06-18)
 
 - Initial major release
