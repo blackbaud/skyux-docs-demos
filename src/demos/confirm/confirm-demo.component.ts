@@ -14,7 +14,10 @@ import {
   templateUrl: './confirm-demo.component.html'
 })
 export class SkyConfirmDemoComponent {
+
   public selectedAction: SkyConfirmButtonAction;
+
+  public selectedText: string;
 
   constructor(
     private confirmService: SkyConfirmService
@@ -66,18 +69,27 @@ export class SkyConfirmDemoComponent {
   }
 
   public openCustomConfirm() {
+    const buttons = [
+      { text: '1', action: 'foo', styleType: 'primary' },
+      { text: '2', action: 'bar' },
+      { text: '3', action: 'baz', autofocus: true }
+    ];
+
     const dialog: SkyConfirmInstance = this.confirmService.open({
       message: 'What option are you going to select?',
       type: SkyConfirmType.Custom,
-      buttons: [
-        { text: '1', action: 'foo', styleType: 'primary' },
-        { text: '2', action: 'bar' },
-        { text: '3', action: 'baz', autofocus: true }
-      ]
+      buttons
     });
 
     dialog.closed.subscribe((result: any) => {
       this.selectedAction = result.action;
+
+      buttons.some((button: any) => {
+        if (button.action === result.action) {
+          this.selectedText = button.text;
+          return true;
+        }
+      });
     });
   }
 }
