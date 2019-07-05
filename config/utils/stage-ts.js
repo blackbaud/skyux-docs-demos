@@ -9,8 +9,6 @@ var fs = require('fs-extra'),
 
 function deleteNonDistFiles() {
   var specFiles = glob.sync(TEMP_PATH + '/**/*.spec.ts');
-  specFiles.push(TEMP_PATH + '/polyfills.ts');
-  specFiles.push(TEMP_PATH + '/vendor.ts');
   specFiles.push(TEMP_PATH + '/**/fixtures');
   specFiles.push(TEMP_PATH + '/app');
 
