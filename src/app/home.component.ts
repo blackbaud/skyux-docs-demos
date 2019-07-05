@@ -38,7 +38,7 @@ export class SkyDemoHomeComponent implements OnInit {
   public open(component: any) {
     this.router.navigate([], {
       queryParams: {
-        'component': component.component.name
+        'component': component.name
       }
     });
   }
