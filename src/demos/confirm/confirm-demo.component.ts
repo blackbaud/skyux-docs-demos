@@ -30,6 +30,7 @@ export class SkyConfirmDemoComponent {
     });
 
     dialog.closed.subscribe((result: any) => {
+      this.selectedText = undefined;
       this.selectedAction = result.action;
     });
   }
@@ -41,6 +42,7 @@ export class SkyConfirmDemoComponent {
     });
 
     dialog.closed.subscribe((result: any) => {
+      this.selectedText = undefined;
       this.selectedAction = result.action;
     });
   }
@@ -53,6 +55,7 @@ export class SkyConfirmDemoComponent {
     });
 
     dialog.closed.subscribe((result: any) => {
+      this.selectedText = undefined;
       this.selectedAction = result.action;
     });
   }
@@ -64,6 +67,7 @@ export class SkyConfirmDemoComponent {
     });
 
     dialog.closed.subscribe((result: any) => {
+      this.selectedText = undefined;
       this.selectedAction = result.action;
     });
   }
