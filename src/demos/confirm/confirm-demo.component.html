@@ -40,6 +40,9 @@
   </button>
 </div>
 
-<sky-alert *ngIf="selectedAction">
+<sky-alert *ngIf="selectedAction && selectedText">
   You selected button "{{ selectedText }}" which has an action of "{{ selectedAction }}."
+</sky-alert>
+<sky-alert *ngIf="selectedAction && !selectedText">
+  You selected the "{{ selectedAction }}" action.
 </sky-alert>
