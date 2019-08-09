@@ -1,8 +1,8 @@
 # 1.0.2 (2019-08-08)
 
-- Fixed the confirm demo's alert to clearly show the difference in the action taken and button text. [#6](https://github.com/blackbaud/skyux2-demos/pull/6)
-- Fixed the repeater demo's context menu to have a true context menu and not a dropdown menu. [#8](https://github.com/blackbaud/skyux2-demos/pull/8)
-- Fixed the grid and list view grid demos to only show the `id` or `field` property on each column. [#9](https://github.com/blackbaud/skyux2-demos/pull/9)
+- Fixed the confirm component's demo to clearly show the difference between the action taken and button text in the alert. [#6](https://github.com/blackbaud/skyux2-demos/pull/6)
+- Fixed the repeater component's demo to use a context menu and not a dropdown menu. [#8](https://github.com/blackbaud/skyux2-demos/pull/8)
+- Fixed the grid component and list view grid component demos to only show the `id` or `field` property on each column. [#9](https://github.com/blackbaud/skyux2-demos/pull/9)
 
 # 1.0.1 (2019-06-24)
 
