@@ -142,3 +142,44 @@
     </div>
   </sky-column>
 </sky-row>
+
+<sky-row>
+  <sky-column screenSmall="12">
+    <h2 class="sky-section-heading">
+      Custom picker
+    </h2>
+
+    <div class="sky-form-group">
+      <label
+        class="sky-control-label"
+        id="my-select-field-custom-1">
+        What is your favorite color?
+      </label>
+      <sky-select-field
+        [data]="colorStream"
+        ariaLabelledBy="my-select-field-custom-1"
+        selectMode="single"
+        singleSelectClearButtonTitle="Clear selected color"
+        singleSelectOpenButtonTitle="Select color"
+        singleSelectPlaceholderText="Select color..."
+        name="favoriteColorCustom"
+        [customPicker]="customFavoriteColorPicker">
+      </sky-select-field>
+    </div>
+
+    <div class="sky-form-group">
+      <label
+        class="sky-control-label"
+        id="my-select-field-custom-2">
+        What are your favorite fruits?
+      </label>
+      <sky-select-field
+        [data]="fruitStream"
+        ariaLabelledBy="my-select-field-custom-2"
+        multipleSelectOpenButtonText="Select fruit"
+        name="favoriteFruitsCustom"
+        [customPicker]="customFavoriteFruitPicker">
+      </sky-select-field>
+    </div>
+  </sky-column>
+</sky-row>
