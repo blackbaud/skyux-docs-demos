@@ -21,17 +21,58 @@ import {
 })
 export class SkyFuzzyDatepickerDemoComponent implements OnInit {
 
-  public futureDisabled: boolean;
+  public set allowFutureDates(value: boolean) {
+    this.futureDisabled = !value;
+  }
 
-  public dateFormat: any = 'MM/DD/YYYY';
+  public get allowFutureDates(): boolean {
+    return !this.futureDisabled;
+  }
+
+  public set enableDatepicker(value: boolean) {
+    this.disabled = !value;
+
+    if (value) {
+      this.reactiveDate.enable();
+    } else {
+      this.reactiveDate.disable();
+    }
+  }
+
+  public get enableDatepicker(): boolean {
+    return !this.disabled;
+  }
+
+  public set enableMaxMinDates(value: boolean) {
+    if (value) {
+      this.maxDate = { day: 1, month: 1, year: 2020 };
+      this.minDate = { day: 1, month: 1, year: 2019 };
+    } else {
+      this.maxDate = undefined;
+    }
+  }
+
+  public get reactiveDate(): AbstractControl {
+    return this.reactiveForm.get('selectedDate');
+  }
+
+  public get reactiveFormSelectedDateForDisplay(): string {
+    return JSON.stringify(this.reactiveDate.value);
+  }
+
+  public get selectedDateForDisplay(): string {
+    return JSON.stringify(this.selectedDate);
+  }
 
   public disabled = false;
+
+  public futureDisabled: boolean;
 
   public maxDate: any;
 
   public minDate: any;
 
-  public noValidate = false;
+  public noValidate = true;
 
   public reactiveForm: FormGroup;
 
@@ -40,8 +81,6 @@ export class SkyFuzzyDatepickerDemoComponent implements OnInit {
     day: 4,
     year: 2017
   };
-
-  public startingDay: number;
 
   public yearRequired: boolean;
 
@@ -55,45 +94,8 @@ export class SkyFuzzyDatepickerDemoComponent implements OnInit {
     });
   }
 
-  public clearSelectedDates(): void {
+  public onResetFormsClick(): void {
     this.selectedDate = undefined;
     this.reactiveDate.setValue(undefined);
-  }
-
-  public setMinMaxDates(): void {
-    this.minDate = { day: 1, month: 1, year: 2018 };
-    this.maxDate = { day: 1, month: 1, year: 2020 };
-  }
-
-  public toggleYearRequired(): void {
-    this.yearRequired = !this.yearRequired;
-    console.log('year required: ' + this.yearRequired);
-  }
-
-  public togglefutureDisabled(): void {
-    this.futureDisabled = !this.futureDisabled;
-    console.log('cannot be future: ' + this.futureDisabled);
-  }
-
-  public toggleDisabled(): void {
-    if (this.reactiveDate.disabled) {
-      this.reactiveDate.enable();
-    } else {
-      this.reactiveDate.disable();
-    }
-
-    this.disabled = !this.disabled;
-  }
-
-  public get reactiveDate(): AbstractControl {
-    return this.reactiveForm.get('selectedDate');
-  }
-
-  public get selectedDateForDisplay(): string {
-    return JSON.stringify(this.selectedDate);
-  }
-
-  public get reactiveFormSelectedDateForDisplay(): string {
-    return JSON.stringify(this.reactiveDate.value);
   }
 }

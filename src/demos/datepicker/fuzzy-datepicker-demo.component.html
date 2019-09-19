@@ -1,7 +1,7 @@
 <h2
   class="sky-section-heading"
 >
-  Standard fuzzy datepicker
+  Template-driven fuzzy datepicker
 </h2>
 
 <div
@@ -11,13 +11,11 @@
     <input
       skyFuzzyDatepickerInput
       [futureDisabled]="futureDisabled"
-      [dateFormat]="dateFormat"
       [disabled]="disabled"
       [maxDate]="maxDate"
       [minDate]="minDate"
       [skyFuzzyDatepickerInput]
       [skyDatepickerNoValidate]="noValidate"
-      [startingDay]="startingDay"
       [yearRequired]="yearRequired"
       [(ngModel)]="selectedDate"
       #date="ngModel"
@@ -46,7 +44,7 @@
 </div>
 
 <p>
-  Selected fuzzy date is {{ selectedDateForDisplay }}
+  Selected fuzzy date: {{ selectedDateForDisplay }}
 </p>
 
 <h2
@@ -64,20 +62,15 @@
     <input
       formControlName="selectedDate"
       skyFuzzyDatepickerInput
-      [dateFormat]="dateFormat"
+      [futureDisabled]="futureDisabled"
       [maxDate]="maxDate"
       [minDate]="minDate"
       [skyFuzzyDatepickerInput]
       [skyDatepickerNoValidate]="noValidate"
-      [startingDay]="startingDay"
       [yearRequired]="yearRequired"
     />
   </sky-datepicker>
 </form>
-
-<p>
-  Reactive form selected fuzzy date is {{ reactiveFormSelectedDateForDisplay }}
-</p>
 
 <p *ngIf="reactiveDate.errors && (reactiveDate.dirty || reactiveDate.touched)"
   class="sky-error-label"
@@ -103,31 +96,48 @@
 </p>
 
 <p>
-  <button
-    class="sky-btn sky-btn-secondary"
-    (click)="clearSelectedDates()"
-  >
-    Clear selected dates
-  </button>
-  <button
-    class="sky-btn"
-    type="button"
-    (click)="setMinMaxDates()"
-  >
-    Set min and max dates
-  </button>
-  <button
-    class="sky-btn"
-    type="button"
-    (click)="toggleYearRequired()"
-  >
-    Toggle year required
-  </button>
-  <button
-    class="sky-btn"
-    type="button"
-    (click)="togglefutureDisabled()"
-  >
-    Toggle cannot be in cannot be in future
-  </button>
+  Selected fuzzy date: {{ reactiveFormSelectedDateForDisplay }}
 </p>
+
+<p>
+  <sky-toggle-switch
+    [(ngModel)]="enableDatepicker"
+  >
+    <sky-toggle-switch-label>
+      Enable datepicker
+    </sky-toggle-switch-label>
+  </sky-toggle-switch>
+</p>
+<p>
+  <sky-toggle-switch
+    [(ngModel)]="allowFutureDates"
+  >
+    <sky-toggle-switch-label>
+      Allow future dates
+    </sky-toggle-switch-label>
+  </sky-toggle-switch>
+</p>
+<p>
+  <sky-toggle-switch
+    [(ngModel)]="yearRequired"
+  >
+    <sky-toggle-switch-label>
+      Require year
+    </sky-toggle-switch-label>
+  </sky-toggle-switch>
+</p>
+<p>
+  <sky-toggle-switch
+    [(ngModel)]="enableMaxMinDates"
+  >
+    <sky-toggle-switch-label>
+      Set max/min dates (1/1/2019 - 1/1/2020)
+    </sky-toggle-switch-label>
+  </sky-toggle-switch>
+</p>
+<button
+  class="sky-btn sky-btn-default sky-margin-inline-default"
+  (click)="onResetFormsClick()"
+>
+  Reset dates
+</button>
