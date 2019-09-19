@@ -5,7 +5,8 @@
 </h2>
 
 <div
-  style="max-width: 50%"
+  class="sky-padding-even-default"
+  style="max-width: 400px;"
 >
   <sky-datepicker>
     <input
@@ -15,7 +16,6 @@
       [maxDate]="maxDate"
       [minDate]="minDate"
       [skyFuzzyDatepickerInput]
-      [skyDatepickerNoValidate]="noValidate"
       [yearRequired]="yearRequired"
       [(ngModel)]="selectedDate"
       #date="ngModel"
@@ -26,26 +26,25 @@
     class="sky-error-label"
   >
     <span *ngIf="date.errors.skyFuzzyDate?.invalid">
-      Please enter a valid date.
+      Please enter a date in the '{{dateFormat}}' format.
     </span>
     <span *ngIf="date.errors.skyFuzzyDate?.yearRequired">
-      Please select a year.
+      Please provide a year.
     </span>
     <span *ngIf="date.errors.skyFuzzyDate?.futureDisabled">
       Date cannot be in the future.
     </span>
     <span *ngIf="date.errors.skyFuzzyDate?.maxDate">
-      The current date is beyond the maximum allowed date.
+      This date is later than allowed. Please select a date before {{ maxDateForDisplay }}.
     </span>
     <span *ngIf="date.errors.skyFuzzyDate?.minDate">
-      The current date is before the minimum allowed date.
+      This date is earlier than allowed. Please select a date after {{ minDateForDisplay }}.
     </span>
   </p>
+  <p>
+    Selected fuzzy date: {{ selectedDateForDisplay }}.
+  </p>
 </div>
-
-<p>
-  Selected fuzzy date: {{ selectedDateForDisplay }}
-</p>
 
 <h2
   class="sky-section-heading"
@@ -53,91 +52,98 @@
   Reactive form fuzzy datepicker
 </h2>
 
-<form
-  novalidate
-  style="max-width: 50%"
-  [formGroup]="reactiveForm"
+<div
+  class="sky-padding-even-default"
+  style="max-width: 400px;"
 >
-  <sky-datepicker>
-    <input
-      formControlName="selectedDate"
-      skyFuzzyDatepickerInput
-      [futureDisabled]="futureDisabled"
-      [maxDate]="maxDate"
-      [minDate]="minDate"
-      [skyFuzzyDatepickerInput]
-      [skyDatepickerNoValidate]="noValidate"
-      [yearRequired]="yearRequired"
-    />
-  </sky-datepicker>
-</form>
+  <form
+    novalidate
+    [formGroup]="reactiveForm"
+  >
+    <sky-datepicker>
+      <input
+        formControlName="selectedDate"
+        skyFuzzyDatepickerInput
+        [futureDisabled]="futureDisabled"
+        [maxDate]="maxDate"
+        [minDate]="minDate"
+        [skyFuzzyDatepickerInput]
+        [yearRequired]="yearRequired"
+      />
+    </sky-datepicker>
+  </form>
 
-<p *ngIf="reactiveDate.errors && (reactiveDate.dirty || reactiveDate.touched)"
-  class="sky-error-label"
+  <p *ngIf="reactiveDate.errors && (reactiveDate.dirty || reactiveDate.touched)"
+    class="sky-error-label"
+  >
+    <span *ngIf="reactiveDate.errors.skyFuzzyDate?.invalid">
+      Please enter a date in the '{{dateFormat}}' format.
+    </span>
+    <span *ngIf="reactiveDate.errors.skyFuzzyDate?.yearRequired">
+      Please provide a year.
+    </span>
+    <span *ngIf="reactiveDate.errors.skyFuzzyDate?.futureDisabled">
+      Date cannot be in the future.
+    </span>
+    <span *ngIf="reactiveDate.errors.skyFuzzyDate?.maxDate">
+      This date is later than allowed. Please select a date before {{ maxDateForDisplay }}.
+    </span>
+    <span *ngIf="reactiveDate.errors.skyFuzzyDate?.minDate">
+      This date is earlier than allowed. Please select a date after {{ minDateForDisplay }}.
+    </span>
+    <span *ngIf="reactiveDate.errors.required">
+      A date is required.
+    </span>
+  </p>
+
+  <p>
+    Selected fuzzy date: {{ reactiveFormSelectedDateForDisplay }}.
+  </p>
+</div>
+
+<div
+  class="sky-padding-even-default"
 >
-  <span *ngIf="reactiveDate.errors.skyFuzzyDate?.invalid">
-    Please enter a valid date.
-  </span>
-  <span *ngIf="reactiveDate.errors.skyFuzzyDate?.yearRequired">
-    Please select a year.
-  </span>
-  <span *ngIf="reactiveDate.errors.skyFuzzyDate?.futureDisabled">
-    Date cannot be in the future.
-  </span>
-  <span *ngIf="reactiveDate.errors.skyFuzzyDate?.maxDate">
-    The current date is beyond the maximum allowed date.
-  </span>
-  <span *ngIf="reactiveDate.errors.skyFuzzyDate?.minDate">
-    The current date is before the minimum allowed date.
-  </span>
-  <span *ngIf="reactiveDate.errors.required">
-    Date is required. Enter a value.
-  </span>
-</p>
-
-<p>
-  Selected fuzzy date: {{ reactiveFormSelectedDateForDisplay }}
-</p>
-
-<p>
-  <sky-toggle-switch
-    [(ngModel)]="enableDatepicker"
+  <p>
+    <sky-toggle-switch
+      [(ngModel)]="enableDatepicker"
+    >
+      <sky-toggle-switch-label>
+        Enable datepicker
+      </sky-toggle-switch-label>
+    </sky-toggle-switch>
+  </p>
+  <p>
+    <sky-toggle-switch
+      [(ngModel)]="allowFutureDates"
+    >
+      <sky-toggle-switch-label>
+        Allow future dates
+      </sky-toggle-switch-label>
+    </sky-toggle-switch>
+  </p>
+  <p>
+    <sky-toggle-switch
+      [(ngModel)]="yearRequired"
+    >
+      <sky-toggle-switch-label>
+        Require year
+      </sky-toggle-switch-label>
+    </sky-toggle-switch>
+  </p>
+  <p>
+    <sky-toggle-switch
+      [(ngModel)]="enableMaxMinDates"
+    >
+      <sky-toggle-switch-label>
+        Set max/min dates (1/1/2019 - 1/1/2020)
+      </sky-toggle-switch-label>
+    </sky-toggle-switch>
+  </p>
+  <button
+    class="sky-btn sky-btn-default sky-margin-inline-default"
+    (click)="onResetFormsClick()"
   >
-    <sky-toggle-switch-label>
-      Enable datepicker
-    </sky-toggle-switch-label>
-  </sky-toggle-switch>
-</p>
-<p>
-  <sky-toggle-switch
-    [(ngModel)]="allowFutureDates"
-  >
-    <sky-toggle-switch-label>
-      Allow future dates
-    </sky-toggle-switch-label>
-  </sky-toggle-switch>
-</p>
-<p>
-  <sky-toggle-switch
-    [(ngModel)]="yearRequired"
-  >
-    <sky-toggle-switch-label>
-      Require year
-    </sky-toggle-switch-label>
-  </sky-toggle-switch>
-</p>
-<p>
-  <sky-toggle-switch
-    [(ngModel)]="enableMaxMinDates"
-  >
-    <sky-toggle-switch-label>
-      Set max/min dates (1/1/2019 - 1/1/2020)
-    </sky-toggle-switch-label>
-  </sky-toggle-switch>
-</p>
-<button
-  class="sky-btn sky-btn-default sky-margin-inline-default"
-  (click)="onResetFormsClick()"
->
-  Reset dates
-</button>
+    Reset dates
+  </button>
+</div>

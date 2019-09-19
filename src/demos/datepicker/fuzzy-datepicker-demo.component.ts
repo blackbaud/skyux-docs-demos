@@ -52,6 +52,14 @@ export class SkyFuzzyDatepickerDemoComponent implements OnInit {
     }
   }
 
+  public get maxDateForDisplay(): string {
+    return JSON.stringify(this.maxDate);
+  }
+
+  public get minDateForDisplay(): string {
+    return JSON.stringify(this.minDate);
+  }
+
   public get reactiveDate(): AbstractControl {
     return this.reactiveForm.get('selectedDate');
   }
@@ -66,13 +74,13 @@ export class SkyFuzzyDatepickerDemoComponent implements OnInit {
 
   public disabled = false;
 
+  public dateFormat = 'MM/DD/YYYY';
+
   public futureDisabled: boolean;
 
   public maxDate: any;
 
   public minDate: any;
-
-  public noValidate = true;
 
   public reactiveForm: FormGroup;
 
