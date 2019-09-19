@@ -12,6 +12,7 @@
     <input
       skyFuzzyDatepickerInput
       [futureDisabled]="futureDisabled"
+      [dateFormat]="dateFormat"
       [disabled]="disabled"
       [maxDate]="maxDate"
       [minDate]="minDate"
@@ -26,7 +27,7 @@
     class="sky-error-label"
   >
     <span *ngIf="date.errors.skyFuzzyDate?.invalid">
-      Please enter a date in the '{{dateFormat}}' format.
+      Please enter a date in the '{{ dateFormat }}' format.
     </span>
     <span *ngIf="date.errors.skyFuzzyDate?.yearRequired">
       Please provide a year.
@@ -77,7 +78,7 @@
     class="sky-error-label"
   >
     <span *ngIf="reactiveDate.errors.skyFuzzyDate?.invalid">
-      Please enter a date in the '{{dateFormat}}' format.
+      Please enter a date in the '{{ dateFormat }}' format.
     </span>
     <span *ngIf="reactiveDate.errors.skyFuzzyDate?.yearRequired">
       Please provide a year.
@@ -136,13 +137,13 @@
       [(ngModel)]="enableMaxMinDates"
     >
       <sky-toggle-switch-label>
-        Set max/min dates (1/1/2019 - 1/1/2020)
+        Set max/min dates (1/1/2019 - 1/1/2029)
       </sky-toggle-switch-label>
     </sky-toggle-switch>
   </p>
   <button
     class="sky-btn sky-btn-default sky-margin-inline-default"
-    (click)="onResetFormsClick()"
+    (click)="onResetDatesClick()"
   >
     Reset dates
   </button>

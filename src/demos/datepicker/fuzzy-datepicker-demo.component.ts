@@ -49,6 +49,7 @@ export class SkyFuzzyDatepickerDemoComponent implements OnInit {
       this.minDate = { day: 1, month: 1, year: 2019 };
     } else {
       this.maxDate = undefined;
+      this.minDate = undefined;
     }
   }
 
@@ -102,7 +103,7 @@ export class SkyFuzzyDatepickerDemoComponent implements OnInit {
     });
   }
 
-  public onResetFormsClick(): void {
+  public onResetDatesClick(): void {
     this.selectedDate = undefined;
     this.reactiveDate.setValue(undefined);
   }
