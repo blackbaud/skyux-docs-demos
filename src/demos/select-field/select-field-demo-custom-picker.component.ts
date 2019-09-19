@@ -25,12 +25,12 @@ export class SkySelectFieldDemoCustomPickerComponent implements OnInit {
   public title: string;
 
   public fruitMap = {
-    '1': String.fromCodePoint(0x1F34E),
-    '2': String.fromCodePoint(0x1F34C),
-    '3': String.fromCodePoint(0x1F348),
-    '4': String.fromCodePoint(0x1F347),
-    '5': String.fromCodePoint(0x1F34B),
-    '6': String.fromCodePoint(0x1F353)
+    '1': '🍎',
+    '2': '🍌',
+    '3': '🍈',
+    '4': '🍇',
+    '5': '🍋',
+    '6': '🍓'
   };
 
   constructor(
