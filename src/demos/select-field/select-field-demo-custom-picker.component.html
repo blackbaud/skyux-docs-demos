@@ -33,18 +33,18 @@
       </button>
     </ng-template>
   </sky-modal-content>
-  <sky-modal-footer>
+  <sky-modal-footer *ngIf="context.pickerType === 'fruit'">
     <button
       class="sky-btn sky-btn-primary"
       type="button"
       (click)="saveFruits()">
-      Save
+      Select
     </button>
     <button
       class="sky-btn sky-btn-link"
       type="button"
       (click)="instance.cancel()">
-      Cancel
+      Close
     </button>
   </sky-modal-footer>
 </sky-modal>
