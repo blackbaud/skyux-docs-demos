@@ -10,19 +10,61 @@ import {
   Validators
 } from '@angular/forms';
 
+import * as moment from 'moment';
+
 @Component({
   selector: 'sky-datepicker-demo',
   templateUrl: './datepicker-demo.component.html'
 })
 export class SkyDatepickerDemoComponent implements OnInit {
-  public minDate: Date;
-  public maxDate: Date;
-  public selectedDate = '4/4/2017';
-  public reactiveForm: FormGroup;
+
+  public set enableDatepicker(value: boolean) {
+    this.disabled = !value;
+
+    if (value) {
+      this.reactiveDate.enable();
+    } else {
+      this.reactiveDate.disable();
+    }
+  }
+
+  public get enableDatepicker(): boolean {
+    return !this.disabled;
+  }
+
+  public set enableMaxMinDates(value: boolean) {
+    if (value) {
+      this.maxDate = new Date('1/1/2029');
+      this.minDate = new Date('1/1/2019');
+    } else {
+      this.maxDate = undefined;
+      this.minDate = undefined;
+    }
+  }
+
+  public get maxDateForDisplay(): string {
+    return JSON.stringify(this.maxDate);
+  }
+
+  public get minDateForDisplay(): string {
+    return JSON.stringify(this.minDate);
+  }
 
   public get reactiveDate(): FormControl {
     return this.reactiveForm.get('selectedDate') as FormControl;
   }
+
+  public disabled = false;
+
+  public dateFormat = 'MM/DD/YYYY';
+
+  public maxDate: Date;
+
+  public minDate: Date;
+
+  public reactiveForm: FormGroup;
+
+  public selectedDate = '4/4/2017';
 
   constructor(
     private formBuilder: FormBuilder
@@ -34,7 +76,11 @@ export class SkyDatepickerDemoComponent implements OnInit {
     });
   }
 
-  public clearSelectedDates(): void {
+  public formatDateForDisplay(date: Date): string {
+    return moment(date).format(this.dateFormat);
+  }
+
+  public resetDates(): void {
     this.selectedDate = undefined;
     this.reactiveDate.setValue(undefined);
   }
