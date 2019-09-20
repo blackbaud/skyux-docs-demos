@@ -33,13 +33,13 @@
       Please provide a year.
     </span>
     <span *ngIf="date.errors.skyFuzzyDate?.futureDisabled">
-      Date cannot be in the future.
+      You cannot specify dates in the future.
     </span>
     <span *ngIf="date.errors.skyFuzzyDate?.maxDate">
-      This date is later than allowed. Please select a date before {{ maxDateForDisplay }}.
+      This date is later than allowed. Please select a date before {{ formatFuzzyDateForDisplay(maxDate) }}.
     </span>
     <span *ngIf="date.errors.skyFuzzyDate?.minDate">
-      This date is earlier than allowed. Please select a date after {{ minDateForDisplay }}.
+      This date is earlier than allowed. Please select a date after {{ formatFuzzyDateForDisplay(minDate) }}.
     </span>
   </p>
   <p>
@@ -84,13 +84,13 @@
       Please provide a year.
     </span>
     <span *ngIf="reactiveDate.errors.skyFuzzyDate?.futureDisabled">
-      Date cannot be in the future.
+      You cannot specify dates in the future.
     </span>
     <span *ngIf="reactiveDate.errors.skyFuzzyDate?.maxDate">
-      This date is later than allowed. Please select a date before {{ maxDateForDisplay }}.
+      This date is later than allowed. Please select a date before {{ formatFuzzyDateForDisplay(maxDate) }}.
     </span>
     <span *ngIf="reactiveDate.errors.skyFuzzyDate?.minDate">
-      This date is earlier than allowed. Please select a date after {{ minDateForDisplay }}.
+      This date is earlier than allowed. Please select a date after {{ formatFuzzyDateForDisplay(minDate) }}.
     </span>
     <span *ngIf="reactiveDate.errors.required">
       A date is required.

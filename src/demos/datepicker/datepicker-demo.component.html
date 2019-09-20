@@ -28,11 +28,11 @@
     </span>
 
     <span *ngIf="date.errors.skyDate?.maxDate">
-      This date is later than allowed. Please select a date before {{ maxDateForDisplay }}.
+        This date is later than allowed. Please select a date before {{ formatDateForDisplay(maxDate) }}.
     </span>
 
     <span *ngIf="date.errors.skyDate?.minDate">
-      This date is earlier than allowed. Please select a date after {{ minDateForDisplay }}.
+        This date is earlier than allowed. Please select a date after {{ formatDateForDisplay(minDate) }}.
     </span>
   </p>
 
@@ -72,10 +72,10 @@
       Please enter a date in the '{{ dateFormat }}' format.
     </span>
     <span *ngIf="reactiveDate.errors.skyDate?.maxDate">
-      This date is later than allowed. Please select a date before {{ maxDateForDisplay }}.
+      This date is later than allowed. Please select a date before {{ formatDateForDisplay(maxDate) }}.
     </span>
     <span *ngIf="reactiveDate.errors.skyDate?.minDate">
-      This date is earlier than allowed. Please select a date after {{ minDateForDisplay }}.
+      This date is earlier than allowed. Please select a date after {{ formatDateForDisplay(minDate) }}.
     </span>
     <span *ngIf="reactiveDate.errors.required">
       A date is required.

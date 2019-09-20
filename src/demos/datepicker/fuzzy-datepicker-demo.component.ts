@@ -45,7 +45,7 @@ export class SkyFuzzyDatepickerDemoComponent implements OnInit {
 
   public set enableMaxMinDates(value: boolean) {
     if (value) {
-      this.maxDate = { day: 1, month: 1, year: 2020 };
+      this.maxDate = { day: 1, month: 1, year: 2029 };
       this.minDate = { day: 1, month: 1, year: 2019 };
     } else {
       this.maxDate = undefined;
@@ -101,6 +101,11 @@ export class SkyFuzzyDatepickerDemoComponent implements OnInit {
     this.reactiveForm = this.formBuilder.group({
       selectedDate: new FormControl({ month: 4, day: 4, year: 2017 }, Validators.required)
     });
+  }
+
+  public formatFuzzyDateForDisplay(date: SkyFuzzyDate): string {
+    const returnValue = date.day + '/' + date.month + '/' + date.year;
+    return returnValue;
   }
 
   public onResetDatesClick(): void {

@@ -10,6 +10,8 @@ import {
   Validators
 } from '@angular/forms';
 
+import * as moment from 'moment';
+
 @Component({
   selector: 'sky-datepicker-demo',
   templateUrl: './datepicker-demo.component.html'
@@ -72,6 +74,10 @@ export class SkyDatepickerDemoComponent implements OnInit {
     this.reactiveForm = this.formBuilder.group({
       selectedDate: new FormControl('4/4/2017', Validators.required)
     });
+  }
+
+  public formatDateForDisplay(date: Date): string {
+    return moment(date).format(this.dateFormat);
   }
 
   public resetDates(): void {
