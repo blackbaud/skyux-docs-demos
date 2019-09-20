@@ -10,8 +10,6 @@ import {
   Validators
 } from '@angular/forms';
 
-import * as moment from 'moment';
-
 @Component({
   selector: 'sky-datepicker-demo',
   templateUrl: './datepicker-demo.component.html'
@@ -77,7 +75,7 @@ export class SkyDatepickerDemoComponent implements OnInit {
   }
 
   public formatDateForDisplay(date: Date): string {
-    return moment(date).format(this.dateFormat);
+    return date.toLocaleDateString();
   }
 
   public resetDates(): void {
