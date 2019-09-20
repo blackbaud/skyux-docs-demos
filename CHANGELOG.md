@@ -1,3 +1,8 @@
+# 1.1.0 (2019-09-20)
+
+- Added demo for the fuzzy datepicker directive and added toggle switches to the datepicker component's demo [#14](https://github.com/blackbaud/skyux2-demos/pull/14)
+- Fixed the vertical tab component's demo to have proper casing. [#12](https://github.com/blackbaud/skyux2-demos/pull/12)
+
 # 1.0.2 (2019-08-08)
 
 - Fixed the confirm component's demo to clearly show the difference between the action taken and button text in the alert. [#6](https://github.com/blackbaud/skyux2-demos/pull/6)
