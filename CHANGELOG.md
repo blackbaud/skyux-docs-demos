@@ -1,7 +1,7 @@
 # 1.1.0 (2019-09-20)
 
 - Added a demo for the fuzzy datepicker directive and added toggle switches to the datepicker component's demo. [#14](https://github.com/blackbaud/skyux2-demos/pull/14)
-- Fixed the vertical tab component's demo to have proper casing. [#12](https://github.com/blackbaud/skyux2-demos/pull/12)
+- Fixed the vertical tab component's demo to use proper casing. [#12](https://github.com/blackbaud/skyux2-demos/pull/12)
 
 # 1.0.2 (2019-08-08)
 
