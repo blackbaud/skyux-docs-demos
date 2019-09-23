@@ -22,6 +22,7 @@ import {
   SkyFilterInlineDemoComponent,
   SkyFluidGridDemoComponent,
   SkyFlyoutDemoComponent,
+  SkyFuzzyDatepickerDemoComponent,
   SkyGridDemoComponent,
   SkyHelpInlineDemoComponent,
   SkyIconDemoComponent,
@@ -428,6 +429,22 @@ export class SkyDemoService {
         {
           name: 'flyout-demo-context.ts',
           fileContents: require('!!raw-loader!./flyout/flyout-demo-context.ts')
+        }
+      ]
+    },
+    {
+      name: 'Fuzzy datepicker',
+      component: SkyFuzzyDatepickerDemoComponent,
+      files: [
+        {
+          name: 'fuzzy-datepicker-demo.component.html',
+          fileContents: require('!!raw-loader!./datepicker/fuzzy-datepicker-demo.component.html')
+        },
+        {
+          name: 'fuzzy-datepicker-demo.component.ts',
+          fileContents: require('!!raw-loader!./datepicker/fuzzy-datepicker-demo.component.ts'),
+          componentName: 'SkyFuzzyDatepickerDemoComponent',
+          bootstrapSelector: 'sky-fuzzy-datepicker-demo'
         }
       ]
     },

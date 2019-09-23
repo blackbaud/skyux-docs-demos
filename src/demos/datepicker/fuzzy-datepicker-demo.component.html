@@ -1,0 +1,150 @@
+<h2
+  class="sky-section-heading"
+>
+  Template-driven fuzzy datepicker
+</h2>
+
+<div
+  class="sky-padding-even-default"
+  style="max-width: 400px;"
+>
+  <sky-datepicker>
+    <input
+      skyFuzzyDatepickerInput
+      [futureDisabled]="futureDisabled"
+      [dateFormat]="dateFormat"
+      [disabled]="disabled"
+      [maxDate]="maxDate"
+      [minDate]="minDate"
+      [skyFuzzyDatepickerInput]
+      [yearRequired]="yearRequired"
+      [(ngModel)]="selectedDate"
+      #date="ngModel"
+    />
+  </sky-datepicker>
+
+  <p *ngIf="date.errors && date.errors.skyFuzzyDate && (date.dirty || date.touched)"
+    class="sky-error-label"
+  >
+    <span *ngIf="date.errors.skyFuzzyDate?.invalid">
+      Please enter a date in the '{{ dateFormat }}' format.
+    </span>
+    <span *ngIf="date.errors.skyFuzzyDate?.yearRequired">
+      Please provide a year.
+    </span>
+    <span *ngIf="date.errors.skyFuzzyDate?.futureDisabled">
+      You cannot specify dates in the future.
+    </span>
+    <span *ngIf="date.errors.skyFuzzyDate?.maxDate">
+      This date is later than allowed. Please select a date before {{ formatFuzzyDateForDisplay(maxDate) }}.
+    </span>
+    <span *ngIf="date.errors.skyFuzzyDate?.minDate">
+      This date is earlier than allowed. Please select a date after {{ formatFuzzyDateForDisplay(minDate) }}.
+    </span>
+  </p>
+  <p>
+    Selected fuzzy date: {{ selectedDateForDisplay }}.
+  </p>
+</div>
+
+<h2
+  class="sky-section-heading"
+>
+  Reactive form fuzzy datepicker
+</h2>
+
+<div
+  class="sky-padding-even-default"
+  style="max-width: 400px;"
+>
+  <form
+    novalidate
+    [formGroup]="reactiveForm"
+  >
+    <sky-datepicker>
+      <input
+        formControlName="selectedDate"
+        skyFuzzyDatepickerInput
+        [futureDisabled]="futureDisabled"
+        [maxDate]="maxDate"
+        [minDate]="minDate"
+        [skyFuzzyDatepickerInput]
+        [yearRequired]="yearRequired"
+      />
+    </sky-datepicker>
+  </form>
+
+  <p *ngIf="reactiveDate.errors && (reactiveDate.dirty || reactiveDate.touched)"
+    class="sky-error-label"
+  >
+    <span *ngIf="reactiveDate.errors.skyFuzzyDate?.invalid">
+      Please enter a date in the '{{ dateFormat }}' format.
+    </span>
+    <span *ngIf="reactiveDate.errors.skyFuzzyDate?.yearRequired">
+      Please provide a year.
+    </span>
+    <span *ngIf="reactiveDate.errors.skyFuzzyDate?.futureDisabled">
+      You cannot specify dates in the future.
+    </span>
+    <span *ngIf="reactiveDate.errors.skyFuzzyDate?.maxDate">
+      This date is later than allowed. Please select a date before {{ formatFuzzyDateForDisplay(maxDate) }}.
+    </span>
+    <span *ngIf="reactiveDate.errors.skyFuzzyDate?.minDate">
+      This date is earlier than allowed. Please select a date after {{ formatFuzzyDateForDisplay(minDate) }}.
+    </span>
+    <span *ngIf="reactiveDate.errors.required">
+      A date is required.
+    </span>
+  </p>
+
+  <p>
+    Selected fuzzy date: {{ reactiveFormSelectedDateForDisplay }}.
+  </p>
+</div>
+
+<div
+  class="sky-padding-even-default"
+>
+  <p>
+    <sky-toggle-switch
+      [(ngModel)]="enableDatepicker"
+    >
+      <sky-toggle-switch-label>
+        Enable datepicker
+      </sky-toggle-switch-label>
+    </sky-toggle-switch>
+  </p>
+  <p>
+    <sky-toggle-switch
+      [(ngModel)]="allowFutureDates"
+    >
+      <sky-toggle-switch-label>
+        Allow future dates
+      </sky-toggle-switch-label>
+    </sky-toggle-switch>
+  </p>
+  <p>
+    <sky-toggle-switch
+      [(ngModel)]="yearRequired"
+    >
+      <sky-toggle-switch-label>
+        Require year
+      </sky-toggle-switch-label>
+    </sky-toggle-switch>
+  </p>
+  <p>
+    <sky-toggle-switch
+      [(ngModel)]="enableMaxMinDates"
+    >
+      <sky-toggle-switch-label>
+        Set max/min dates (1/1/2019 - 1/1/2029)
+      </sky-toggle-switch-label>
+    </sky-toggle-switch>
+  </p>
+  <button
+    class="sky-btn sky-btn-default sky-margin-inline-default"
+    (click)="onResetDatesClick()"
+  >
+    Reset dates
+  </button>
+</div>
