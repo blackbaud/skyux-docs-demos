@@ -33,35 +33,40 @@ export class SkySelectFieldDemoCustomPickerComponent implements OnInit {
     '6': '🍓'
   };
 
+  private fruitValues: SkySelectField[];
+
   constructor(
     private instance: SkyModalInstance,
     public context: SkySelectFieldDemoCustomPickerContext
-  ) { }
+  ) {
+    if (context.pickerType === 'fruit') {
+      this.fruitValues = context.pickerContext.selectedValue &&
+        context.pickerContext.selectedValue.slice();
+    }
+  }
 
   public ngOnInit(): void {
     this.title = `Select a ${this.context.pickerType}`;
   }
 
   public fruitIsSelected(fruitId: string): boolean {
-    return !!(this.context.pickerContext.selectedValue &&
-      this.context.pickerContext.selectedValue.find(
+    return !!(this.fruitValues &&
+      this.fruitValues.find(
         (fruit: SkySelectField) => fruit.id === fruitId
       ));
   }
 
   public toggleFruit(fruit: SkySelectField): void {
-    let selectedValues: SkySelectField[] = this.context.pickerContext.selectedValue;
+    if (this.fruitValues) {
+      const fruitIndex = this.fruitValues.indexOf(fruit);
 
-    if (selectedValues) {
-      const fruitIndex = selectedValues.indexOf(fruit);
-
-      if (selectedValues.indexOf(fruit) >= 0) {
-        selectedValues.splice(fruitIndex, 1);
+      if (this.fruitValues.indexOf(fruit) >= 0) {
+        this.fruitValues.splice(fruitIndex, 1);
       } else {
-        selectedValues.push(fruit);
+        this.fruitValues.push(fruit);
       }
     } else {
-      this.context.pickerContext.selectedValue = [fruit];
+      this.fruitValues = [fruit];
     }
   }
 
@@ -70,7 +75,7 @@ export class SkySelectFieldDemoCustomPickerComponent implements OnInit {
   }
 
   public saveFruits(): void {
-    this.instance.save(this.context.pickerContext.selectedValue);
+    this.instance.save(this.fruitValues);
   }
 
 }
