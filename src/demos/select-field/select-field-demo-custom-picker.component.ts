@@ -38,18 +38,18 @@ export class SkySelectFieldDemoCustomPickerComponent implements OnInit {
     public context: SkySelectFieldDemoCustomPickerContext
   ) { }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     this.title = `Select a ${this.context.pickerType}`;
   }
 
-  public fruitIsSelected(fruitId: string) {
-    return this.context.pickerContext.selectedValue &&
+  public fruitIsSelected(fruitId: string): boolean {
+    return !!(this.context.pickerContext.selectedValue &&
       this.context.pickerContext.selectedValue.find(
         (fruit: SkySelectField) => fruit.id === fruitId
-      );
+      ));
   }
 
-  public toggleFruit(fruit: SkySelectField) {
+  public toggleFruit(fruit: SkySelectField): void {
     let selectedValues: SkySelectField[] = this.context.pickerContext.selectedValue;
 
     if (selectedValues) {
@@ -65,11 +65,11 @@ export class SkySelectFieldDemoCustomPickerComponent implements OnInit {
     }
   }
 
-  public selectColor(color: SkySelectField) {
+  public selectColor(color: SkySelectField): void {
     this.instance.save([color]);
   }
 
-  public saveFruits() {
+  public saveFruits(): void {
     this.instance.save(this.context.pickerContext.selectedValue);
   }
 

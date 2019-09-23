@@ -5,40 +5,44 @@
     </h2>
 
     <form
+      novalidate
       [formGroup]="reactiveForm"
       (ngSubmit)="submitReactiveForm()"
-      novalidate>
-
+    >
       <div class="sky-form-group">
         <label
           class="sky-control-label"
-          id="my-select-field-1">
+          id="my-select-field-1"
+        >
           What is your favorite color?
         </label>
         <sky-select-field
-          [data]="colorStream"
           ariaLabelledBy="my-select-field-1"
           formControlName="favoriteColor"
           pickerHeading="Colors"
           selectMode="single"
           singleSelectClearButtonTitle="Clear selected color"
           singleSelectOpenButtonTitle="Select color"
-          singleSelectPlaceholderText="Select color...">
+          singleSelectPlaceholderText="Select color..."
+          [data]="colorStream"
+        >
         </sky-select-field>
       </div>
 
       <div class="sky-form-group">
         <label
           class="sky-control-label"
-          id="my-select-field-2">
+          id="my-select-field-2"
+        >
           What are your favorite fruits?
         </label>
         <sky-select-field
-          [data]="fruitStream"
           ariaLabelledBy="my-select-field-2"
           formControlName="favoriteFruits"
           multipleSelectOpenButtonText="Select fruit"
-          pickerHeading="Fruits">
+          pickerHeading="Fruits"
+          [data]="fruitStream"
+        >
         </sky-select-field>
       </div>
 
@@ -49,7 +53,8 @@
 
       <button
         class="sky-btn sky-btn-primary"
-        type="submit">
+        type="submit"
+      >
         Submit
       </button>
     </form>
@@ -60,42 +65,46 @@
     </h2>
 
     <form
-      #myForm="ngForm"
+      novalidate
       (ngSubmit)="submitTemplateForm(myForm.value)"
-      novalidate>
-
+      #myForm="ngForm"
+    >
       <div class="sky-form-group">
         <label
           class="sky-control-label"
-          id="my-select-field-template-driven-1">
+          id="my-select-field-template-driven-1"
+        >
           What is your favorite color?
         </label>
         <sky-select-field
-          [data]="colorStream"
           ariaLabelledBy="my-select-field-template-driven-1"
+          name="favoriteColor"
           pickerHeading="Colors"
           selectMode="single"
           singleSelectClearButtonTitle="Clear selected color"
           singleSelectOpenButtonTitle="Select color"
           singleSelectPlaceholderText="Select color..."
-          name="favoriteColor"
-          [(ngModel)]="templateDrivenModel.favoriteColor">
+          [data]="colorStream"
+          [(ngModel)]="templateDrivenModel.favoriteColor"
+        >
         </sky-select-field>
       </div>
 
       <div class="sky-form-group">
         <label
           class="sky-control-label"
-          id="my-select-field-template-driven-2">
+          id="my-select-field-template-driven-2"
+        >
           What are your favorite fruits?
         </label>
         <sky-select-field
-          [data]="fruitStream"
           ariaLabelledBy="my-select-field-template-driven-2"
           multipleSelectOpenButtonText="Select fruit"
-          pickerHeading="Fruits"
           name="favoriteFruits"
-          [(ngModel)]="templateDrivenModel.favoriteFruits">
+          pickerHeading="Fruits"
+          [data]="fruitStream"
+          [(ngModel)]="templateDrivenModel.favoriteFruits"
+        >
         </sky-select-field>
       </div>
 
@@ -106,7 +115,8 @@
 
       <button
         class="sky-btn sky-btn-primary"
-        type="submit">
+        type="submit"
+      >
         Submit
       </button>
     </form>
@@ -120,24 +130,28 @@
 
     <div class="sky-form-group">
       <label
-        class="sky-control-label">
+        class="sky-control-label"
+      >
         Make a single selection (disabled)
       </label>
       <sky-select-field
-        [data]="colorStream"
         [disabled]="true"
-        selectMode="single">
+        selectMode="single"
+        [data]="colorStream"
+      >
       </sky-select-field>
     </div>
 
     <div class="sky-form-group">
       <label
-        class="sky-control-label">
+        class="sky-control-label"
+      >
         Make multiple selections (disabled)
       </label>
       <sky-select-field
         [data]="fruitStream"
-        [disabled]="true">
+        [disabled]="true"
+      >
       </sky-select-field>
     </div>
   </sky-column>
@@ -152,33 +166,37 @@
     <div class="sky-form-group">
       <label
         class="sky-control-label"
-        id="my-select-field-custom-1">
+        id="my-select-field-custom-1"
+      >
         What is your favorite color?
       </label>
       <sky-select-field
-        [data]="colorStream"
         ariaLabelledBy="my-select-field-custom-1"
+        name="favoriteColorCustom"
         selectMode="single"
         singleSelectClearButtonTitle="Clear selected color"
         singleSelectOpenButtonTitle="Select color"
         singleSelectPlaceholderText="Select color..."
-        name="favoriteColorCustom"
-        [customPicker]="customFavoriteColorPicker">
+        [customPicker]="customFavoriteColorPicker"
+        [data]="colorStream"
+      >
       </sky-select-field>
     </div>
 
     <div class="sky-form-group">
       <label
         class="sky-control-label"
-        id="my-select-field-custom-2">
+        id="my-select-field-custom-2"
+      >
         What are your favorite fruits?
       </label>
       <sky-select-field
-        [data]="fruitStream"
         ariaLabelledBy="my-select-field-custom-2"
         multipleSelectOpenButtonText="Select fruit"
         name="favoriteFruitsCustom"
-        [customPicker]="customFavoriteFruitPicker">
+        [customPicker]="customFavoriteFruitPicker"
+        [data]="fruitStream"
+      >
       </sky-select-field>
     </div>
   </sky-column>
