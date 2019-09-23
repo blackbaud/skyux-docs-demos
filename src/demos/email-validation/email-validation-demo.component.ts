@@ -18,6 +18,7 @@ import {
   templateUrl: './email-validation-demo.component.html'
 })
 export class SkyEmailValidationDemoComponent implements OnInit {
+
   public reactiveForm: FormGroup;
   public templateDrivenModel: string;
 

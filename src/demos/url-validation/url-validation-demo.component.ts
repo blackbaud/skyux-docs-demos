@@ -18,6 +18,7 @@ import {
   templateUrl: './url-validation-demo.component.html'
 })
 export class SkyUrlValidationDemoComponent implements OnInit {
+
   public reactiveForm: FormGroup;
   public urlValidator: string;
 

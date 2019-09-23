@@ -1,42 +1,60 @@
-<sky-row>
-  <sky-column screenSmall="6">
-    <h2 class="sky-section-heading">
-      Reactive form input validation
-    </h2>
-    <form [formGroup]="reactiveForm">
+<sky-fluid-grid>
+  <sky-row>
+    <sky-column
+      screenSmall="6"
+    >
+      <h2
+        class="sky-section-heading"
+      >
+        Reactive form input validation
+      </h2>
+      <form
+        [formGroup]="reactiveForm"
+      >
+        <label>
+          Email:
+          <input
+            class="sky-form-control"
+            formControlName="email"
+          >
+        </label>
+        <div *ngIf="reactiveForm.get('email').errors && reactiveForm.get('email').errors.skyEmail && (reactiveForm.get('email').dirty && reactiveForm.get('email').touched)"
+          class="sky-error-label"
+        >
+          <span
+            [hidden]="!reactiveForm.get('email').errors.skyEmail.invalid"
+          >
+            Enter a valid email in the joe@abc.com format.
+          </span>
+        </div>
+      </form>
+    </sky-column>
+    <sky-column
+      screenSmall="6"
+    >
+      <h2
+        class="sky-section-heading"
+      >
+        Template-driven form input validation
+      </h2>
       <label>
         Email:
         <input
           class="sky-form-control"
-          formControlName="email">
+          skyEmailValidation
+          [(ngModel)]="emailValidator"
+          #emailInput="ngModel"
+        >
       </label>
-      <div
+      <div *ngIf="emailInput.errors && emailInput.errors.skyEmail && (emailInput.dirty && emailInput.touched)"
         class="sky-error-label"
-        *ngIf="reactiveForm.get('email').errors && reactiveForm.get('email').errors.skyEmail && (reactiveForm.get('email').dirty && reactiveForm.get('email').touched)">
-        <span [hidden]="!reactiveForm.get('email').errors.skyEmail.invalid">
+      >
+        <span
+          [hidden]="!emailInput.errors.skyEmail.invalid"
+        >
           Enter a valid email in the joe@abc.com format.
         </span>
       </div>
-    </form>
-  </sky-column>
-  <sky-column screenSmall="6">
-    <h2 class="sky-section-heading">
-      Template-driven form input validation
-    </h2>
-    <label>
-      Email:
-      <input
-        class="sky-form-control"
-        skyEmailValidation
-        [(ngModel)]="emailValidator"
-        #emailInput="ngModel">
-    </label>
-    <div
-      class="sky-error-label"
-      *ngIf="emailInput.errors && emailInput.errors.skyEmail && (emailInput.dirty && emailInput.touched)">
-      <span [hidden]="!emailInput.errors.skyEmail.invalid">
-        Enter a valid email in the joe@abc.com format.
-      </span>
-    </div>
-  </sky-column>
-</sky-row>
+    </sky-column>
+  </sky-row>
+</sky-fluid-grid>
