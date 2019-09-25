@@ -14,7 +14,7 @@
           class="sky-control-label"
           id="my-select-field-1"
         >
-          What is your favorite color?
+          Favorite color
         </label>
         <sky-select-field
           ariaLabelledBy="my-select-field-1"
@@ -34,12 +34,12 @@
           class="sky-control-label"
           id="my-select-field-2"
         >
-          What are your favorite fruits?
+          Favorite fruits
         </label>
         <sky-select-field
           ariaLabelledBy="my-select-field-2"
           formControlName="favoriteFruits"
-          multipleSelectOpenButtonText="Select fruit"
+          multipleSelectOpenButtonText="Select fruits"
           pickerHeading="Fruits"
           [data]="fruitStream"
         >
@@ -74,7 +74,7 @@
           class="sky-control-label"
           id="my-select-field-template-driven-1"
         >
-          What is your favorite color?
+          Favorite color
         </label>
         <sky-select-field
           ariaLabelledBy="my-select-field-template-driven-1"
@@ -95,11 +95,11 @@
           class="sky-control-label"
           id="my-select-field-template-driven-2"
         >
-          What are your favorite fruits?
+          Favorite fruits
         </label>
         <sky-select-field
           ariaLabelledBy="my-select-field-template-driven-2"
-          multipleSelectOpenButtonText="Select fruit"
+          multipleSelectOpenButtonText="Select fruits"
           name="favoriteFruits"
           pickerHeading="Fruits"
           [data]="fruitStream"
@@ -132,13 +132,13 @@
       <label
         class="sky-control-label"
       >
-        Make a single selection (disabled)
+        Favorite color (disabled)
       </label>
       <sky-select-field
         [disabled]="true"
         selectMode="single"
         [data]="colorStream"
-      >
+        singleSelectPlaceholderText="Select color..."      >
       </sky-select-field>
     </div>
 
@@ -146,12 +146,13 @@
       <label
         class="sky-control-label"
       >
-        Make multiple selections (disabled)
+        Favorite fruits (disabled)
       </label>
       <sky-select-field
         [data]="fruitStream"
         [disabled]="true"
-      >
+        multipleSelectOpenButtonText="Select fruits"
+        >
       </sky-select-field>
     </div>
   </sky-column>
@@ -168,7 +169,7 @@
         class="sky-control-label"
         id="my-select-field-custom-1"
       >
-        What is your favorite color?
+        Favorite color
       </label>
       <sky-select-field
         ariaLabelledBy="my-select-field-custom-1"
@@ -188,11 +189,11 @@
         class="sky-control-label"
         id="my-select-field-custom-2"
       >
-        What are your favorite fruits?
+        Favorite fruits
       </label>
       <sky-select-field
         ariaLabelledBy="my-select-field-custom-2"
-        multipleSelectOpenButtonText="Select fruit"
+        multipleSelectOpenButtonText="Select fruits"
         name="favoriteFruitsCustom"
         [customPicker]="customFavoriteFruitPicker"
         [data]="fruitStream"
