@@ -1,14 +1,60 @@
-<input
-  skyUrlValidation
-  class="sky-form-control"
-  [(ngModel)]="url"
-  #input="ngModel">
-
-<div
-  class="sky-error-label"
-  *ngIf="input.errors && input.errors.skyUrl && (input.dirty && input.touched)">
-  <span
-    [hidden]="!input.errors.skyUrl.invalid">
-    Enter a valid URL with the http(s)://site.domain format.
-  </span>
-</div>
+<sky-fluid-grid>
+  <sky-row>
+    <sky-column
+      screenSmall="6"
+    >
+      <h2
+        class="sky-section-heading"
+      >
+        Reactive form input validation
+      </h2>
+      <form
+        [formGroup]="reactiveForm"
+      >
+        <label>
+          URL
+          <input
+            class="sky-form-control"
+            formControlName="url"
+          >
+        </label>
+        <div *ngIf="reactiveForm.get('url').errors && reactiveForm.get('url').errors.skyUrl && (reactiveForm.get('url').dirty && reactiveForm.get('url').touched)"
+          class="sky-error-label"
+        >
+          <span
+            [hidden]="!reactiveForm.get('url').errors.skyUrl.invalid"
+          >
+            Enter a valid URL with the http(s)://site.domain format.
+          </span>
+        </div>
+      </form>
+    </sky-column>
+    <sky-column
+      screenSmall="6"
+    >
+      <h2
+        class="sky-section-heading"
+      >
+        Template-driven form input validation
+      </h2>
+      <label>
+        URL
+        <input
+          class="sky-form-control"
+          skyUrlValidation
+          [(ngModel)]="urlValidator"
+          #urlInput="ngModel"
+        >
+      </label>
+      <div *ngIf="urlInput.errors && urlInput.errors.skyUrl && (urlInput.dirty && urlInput.touched)"
+        class="sky-error-label"
+      >
+        <span
+          [hidden]="!urlInput.errors.skyUrl.invalid"
+        >
+          Enter a valid URL with the http(s)://site.domain format.
+        </span>
+      </div>
+    </sky-column>
+  </sky-row>
+</sky-fluid-grid>

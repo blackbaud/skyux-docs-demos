@@ -32,6 +32,7 @@ import {
   SkyFilterInlineDemoComponent,
   SkyFluidGridDemoComponent,
   SkyFlyoutDemoComponent,
+  SkyFuzzyDatepickerDemoComponent,
   SkyGridDemoComponent,
   SkyHelpInlineDemoComponent,
   SkyIconDemoComponent,
@@ -122,6 +123,7 @@ const components = [
   SkyFlyoutDemoComponent,
   SkyFlyoutDemoInternalComponent,
   SkyFlyoutDemoInternalSimpleComponent,
+  SkyFuzzyDatepickerDemoComponent,
   SkyGridDemoComponent,
   SkyIconDemoComponent,
   SkyHelpInlineDemoComponent,
@@ -212,7 +214,8 @@ import {
 import {
   SkyCheckboxModule,
   SkyFileAttachmentsModule,
-  SkyRadioModule
+  SkyRadioModule,
+  SkyToggleSwitchModule
 } from '@skyux/forms';
 
 import {
@@ -381,6 +384,7 @@ import {
     SkyTileDashboardModule,
     SkyTimepickerModule,
     SkyToastModule,
+    SkyToggleSwitchModule,
     SkyTokensModule,
     SkyToolbarModule,
     SkyUrlValidationModule,
