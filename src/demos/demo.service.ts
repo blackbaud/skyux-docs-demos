@@ -1038,6 +1038,22 @@ export class SkyDemoService {
           fileContents: require('!!raw-loader!./select-field/select-field-demo.component.ts'),
           componentName: 'SkySelectFieldDemoComponent',
           bootstrapSelector: 'sky-select-field-demo'
+        },
+        {
+          name: 'select-field-demo-custom-picker-context.ts',
+          fileContents: require('!!raw-loader!./select-field/select-field-demo-custom-picker-context.ts')
+        },
+        {
+          name: 'select-field-demo-custom-picker.component.html',
+          fileContents: require('!!raw-loader!./select-field/select-field-demo-custom-picker.component.html')
+        },
+        {
+          name: 'select-field-demo-custom-picker.component.scss',
+          fileContents: require('!!raw-loader!./select-field/select-field-demo-custom-picker.component.scss')
+        },
+        {
+          name: 'select-field-demo-custom-picker.component.ts',
+          fileContents: require('!!raw-loader!./select-field/select-field-demo-custom-picker.component.ts')
         }
       ]
     },

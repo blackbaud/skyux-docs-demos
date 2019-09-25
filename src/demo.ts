@@ -94,7 +94,8 @@ import {
   SkyTileDemoTile2Component,
   SkyWizardDemoModalComponent,
   SkyFlyoutDemoInternalComponent,
-  SkyFlyoutDemoInternalSimpleComponent
+  SkyFlyoutDemoInternalSimpleComponent,
+  SkySelectFieldDemoCustomPickerComponent
 } from './demos';
 
 import { SkyDemoService } from './demos/demo.service';
@@ -156,6 +157,7 @@ const components = [
   SkyDemoInformationFormComponent,
   SkyDemoPhoneFormComponent,
   SkySelectFieldDemoComponent,
+  SkySelectFieldDemoCustomPickerComponent,
   SkySortDemoComponent,
   SkyTabsDemoComponent,
   SkyTextExpandDemoComponent,
