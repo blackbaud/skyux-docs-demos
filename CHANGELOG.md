@@ -1,3 +1,7 @@
+# 1.2.0 (2019-09-25)
+
+- Added demos for the functions that validate email addresses and URLs in reactive forms. [#18](https://github.com/blackbaud/skyux2-demos/pull/18)
+
 # 1.1.0 (2019-09-20)
 
 - Added a demo for the fuzzy datepicker directive and added toggle switches to the datepicker component's demo. [#14](https://github.com/blackbaud/skyux2-demos/pull/14)
