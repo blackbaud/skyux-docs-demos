@@ -1,3 +1,7 @@
+# 1.3.0 (2019-09-25)
+
+- Added custom picker demos for the select field component. [#17](https://github.com/blackbaud/skyux2-demos/pull/17)
+
 # 1.2.0 (2019-09-25)
 
 - Added demos for the functions that validate email addresses and URLs in reactive forms. [#18](https://github.com/blackbaud/skyux2-demos/pull/18)
