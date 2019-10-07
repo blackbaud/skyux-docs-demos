@@ -125,6 +125,7 @@
     "@skyux/validation": "3.2.0",
     "@types/core-js": "2.5.2",
     "codelyzer": "4.5.0",
+    "core-js": "2.6.9",
     "microedge-rxstate": "3.0.0",
     "rollup": "0.68.2",
     "rollup-plugin-commonjs": "8.4.1",
