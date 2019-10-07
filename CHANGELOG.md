@@ -1,3 +1,8 @@
+# 1.3.1 (2019-10-07)
+
+- Fixed the list data provider demo to show all data provider functionality. [#23](https://github.com/blackbaud/skyux2-demos/pull/23)
+- Updated the datepicker demo to have clearer toggle labels. [#24](https://github.com/blackbaud/skyux2-demos/pull/24)
+
 # 1.3.0 (2019-09-25)
 
 - Added custom picker demos for the select field component. [#17](https://github.com/blackbaud/skyux2-demos/pull/17)
