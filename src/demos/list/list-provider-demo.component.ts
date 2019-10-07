@@ -36,45 +36,69 @@ export class DemoListProvider extends ListDataProvider {
 
     this.items = Observable.of([
       {
+        id: '0',
+        data: {
+          name: 'Orange',
+          description: 'A round, orange fruit.',
+          type: 'citrus',
+          color: 'orange',
+          highAcidity: 'True',
+          ph: 3.71
+        }
+      },
+      {
         id: '1',
         data: {
-          column1: 101, column2: 'Apple', column3: 'Anne eats apples'
+          name: 'Mango',
+          description: 'Delicious in smoothies, but don\'t eat the skin.',
+          type: 'other',
+          color: 'orange',
+          highAcidity: 'False',
+          ph: 5.92
         }
       },
       {
         id: '2',
         data: {
-          column1: 202, column2: 'Banana', column3: 'Ben eats bananas'
+          name: 'Lime',
+          description: 'A sour, green fruit used in many drinks.',
+          type: 'citrus',
+          color: 'green',
+          highAcidity: 'True',
+          ph: 2.50
         }
       },
       {
         id: '3',
         data: {
-          column1: 303, column2: 'Pear', column3: 'Patty eats pears'
+          name: 'Strawberry',
+          description: 'A red fruit that goes well with shortcake.',
+          type: 'berry',
+          color: 'red',
+          highAcidity: 'True',
+          ph: 3.84
         }
       },
       {
         id: '4',
         data: {
-          column1: 404, column2: 'Grape', column3: 'George eats grapes'
+          name: 'Blueberry',
+          description: 'A small, blue fruit often found in muffins.',
+          type: 'berry',
+          color: 'blue',
+          highAcidity: 'True',
+          ph: 3.21
         }
       },
       {
         id: '5',
         data: {
-          column1: 505, column2: 'Banana', column3: 'Becky eats bananas'
-        }
-      },
-      {
-        id: '6',
-        data: {
-          column1: 606, column2: 'Lemon', column3: 'Larry eats lemons'
-        }
-      },
-      {
-        id: '7',
-        data: {
-          column1: 707, column2: 'Strawberry', column3: 'Sally eats strawberries'
+          name: 'Black Olives',
+          description: 'A small fruit used on pizza.',
+          type: 'other',
+          color: 'black',
+          highAcidity: 'False',
+          ph: 6.14
         }
       }
     ]);
@@ -94,26 +118,52 @@ export class DemoListProvider extends ListDataProvider {
 
   private fakeHttpRequest(request: ListDataRequestModel): Observable<ListDataResponseModel> {
     return this.items.map((items: ListItemModel[]) => {
-      let searchedList = items;
+      let modifiedList = items;
 
       if (request.search.searchText) {
         let searchText = request.search.searchText.toLowerCase();
 
-        searchedList = items.filter((item) => {
+        modifiedList = modifiedList.filter((item) => {
           return (
-            item.data.column2.toLowerCase().indexOf(searchText) > -1 ||
-            item.data.column3.toLowerCase().indexOf(searchText) > -1
+            item.data.name.toLowerCase().indexOf(searchText) > -1 ||
+            item.data.description.toLowerCase().indexOf(searchText) > -1
           );
         });
       }
 
-      let itemStart = (request.pageNumber - 1) * request.pageSize;
-      let pagedResult = searchedList.slice(itemStart, itemStart + request.pageSize);
+      if (request.filters) {
+        for (let filter of request.filters) {
+          if (filter.name === 'fruitType' && filter.value !== 'any') {
+            modifiedList = modifiedList.filter((item) => {
+              return item.data.type === request.filters[0].value;
+            });
+          } else if (filter.name === 'hideOrange' && filter.value) {
+            modifiedList = modifiedList.filter(filter.filterFunction);
+          }
+        }
+      }
 
-      this.remoteCount.next(searchedList.length);
+      if (request.sort) {
+        for (let fieldSelector of request.sort.fieldSelectors) {
+          if (fieldSelector.fieldSelector === 'highAcidity') {
+            modifiedList = modifiedList.sort((itemA: any, itemB: any) => {
+              if (fieldSelector.descending) {
+                return itemA.data.ph < itemB.data.ph ? 1 : -1;
+              } else {
+                return itemA.data.ph < itemB.data.ph ? -1 : 1;
+              }
+            });
+          }
+        }
+      }
+
+      let itemStart = (request.pageNumber - 1) * request.pageSize;
+      let pagedResult = modifiedList.slice(itemStart, itemStart + request.pageSize);
+
+      this.remoteCount.next(modifiedList.length);
 
       return new ListDataResponseModel({
-        count: searchedList.length,
+        count: modifiedList.length,
         items: pagedResult
       });
     });
@@ -129,4 +179,8 @@ export class SkyListProviderDemoComponent {
   constructor(
     public listDataProvider: DemoListProvider
   ) { }
+
+  public hideOrangeFilterFunction(item: ListItemModel, filterValue: any): boolean {
+    return !filterValue || (filterValue && item.data.color !== 'orange');
+  }
 }
