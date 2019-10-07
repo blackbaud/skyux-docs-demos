@@ -1,6 +1,6 @@
 # 1.3.1 (2019-10-07)
 
-- Fixed the list data provider demo to show all data provider functionality. [#23](https://github.com/blackbaud/skyux2-demos/pull/23)
+- Fixed the list data provider demo to show examples of sorting, filtering, and searching while using the data provider. [#23](https://github.com/blackbaud/skyux2-demos/pull/23)
 - Updated the toggle switch labels in the datepicker demos. [#24](https://github.com/blackbaud/skyux2-demos/pull/24)
 
 # 1.3.0 (2019-09-25)
