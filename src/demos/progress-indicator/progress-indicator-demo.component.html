@@ -1,4 +1,4 @@
-<h2>Progress Indicator</h2>
+<h2>Active progress indicator</h2>
 
 <sky-progress-indicator
   id="waterfall-indicator"
@@ -8,7 +8,7 @@
   #progressIndicator
 >
 
-  <sky-progress-indicator-title>Setup my connection</sky-progress-indicator-title>
+  <sky-progress-indicator-title>Set up my connection</sky-progress-indicator-title>
 
   <sky-progress-indicator-item
     title="Configure connection"
@@ -19,7 +19,7 @@
         type="button"
         (click)="configureConnection(true)"
       >
-        Set connection
+        Set up connection
       </button>
       <button *ngIf="activeIndex > 0"
         class="sky-btn sky-btn-link"
@@ -94,7 +94,7 @@
   </sky-progress-indicator-reset-button>
 </sky-progress-indicator>
 <hr>
-<h2>Progress indicator passive</h2>
+<h2>Passive progress indicator</h2>
 <button
   class="sky-btn sky-btn-link"
   skyPopoverPlacement="right"
@@ -102,7 +102,7 @@
   type="button"
   [skyPopover]="myPopover1"
 >
-  In progress
+  Process status
 </button>
 
 <sky-popover #myPopover1>
@@ -111,7 +111,7 @@
     [startingIndex]="1"
   >
     <sky-progress-indicator-item
-      title="Received (02-19-2003)"
+      title="Received (02-19-2019)"
     >
     </sky-progress-indicator-item>
     <sky-progress-indicator-item
