@@ -4,6 +4,7 @@
   <sky-repeater-item
     *ngFor="let item of items"
     [isExpanded]="item.expanded"
+    [reorderable]="reorderable"
     [selectable]="selectable"
   >
     <sky-repeater-item-title>
@@ -59,9 +60,18 @@
   </label>
   <button class="sky-btn sky-margin-inline-default" (click)="addItem()">Add item</button>
   <button class="sky-btn sky-margin-inline-default" (click)="removeItem()">Remove last item</button>
+</p>
+<p>
+  <sky-checkbox [(ngModel)]="reorderable">
+    <sky-checkbox-label>
+      Enable reorderability
+    </sky-checkbox-label>
+  </sky-checkbox>
+</p>
+<p>
   <sky-checkbox [(ngModel)]="selectable">
     <sky-checkbox-label>
-      Show checkbox
+      Enable selectability
     </sky-checkbox-label>
   </sky-checkbox>
 </p>
