@@ -40,7 +40,6 @@ export class SkyRepeaterDemoComponent {
       status: 'Active',
       statusType: 'info'
     });
-    console.log(this.items);
   }
 
   public removeItem() {
