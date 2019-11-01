@@ -1,3 +1,7 @@
+# 1.4.0 (2019-11-01)
+
+- Added a toggle for reorderablity functionality to the repeater demo. [#28](https://github.com/blackbaud/skyux2-demos/pull/28)
+
 # 1.3.1 (2019-10-07)
 
 - Fixed the list data provider demo to show examples of sorting, filtering, and searching while using the data provider. [#23](https://github.com/blackbaud/skyux2-demos/pull/23)
