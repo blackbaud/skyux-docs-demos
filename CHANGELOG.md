@@ -1,4 +1,4 @@
-# 1.4.0 (2019-11-01)
+# 1.4.0 (2019-11-04)
 
 - Added a toggle for reorderablity functionality to the repeater demo. [#28](https://github.com/blackbaud/skyux2-demos/pull/28)
 
