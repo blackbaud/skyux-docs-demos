@@ -54,19 +54,19 @@
       [progressIndicator]="wizardDemo"
     >
     </sky-progress-indicator-nav-button>
-    <sky-progress-indicator-nav-button *ngIf="!isDone"
+    <sky-progress-indicator-nav-button
       buttonType="next"
       [disabled]="!requirementsMet"
       [progressIndicator]="wizardDemo"
     >
     </sky-progress-indicator-nav-button>
-    <button *ngIf="isDone"
-      class="sky-btn sky-btn-default"
-      type="button"
+    <sky-progress-indicator-nav-button
+      buttonType="finish"
+      buttonText="Save and close"
+      [progressIndicator]="wizardDemo"
       (click)="instance.close()"
     >
-      Save and close
-    </button>
+    </sky-progress-indicator-nav-button>
     <button
       class="sky-btn sky-btn-link"
       type="button"
