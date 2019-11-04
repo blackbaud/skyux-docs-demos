@@ -37,6 +37,8 @@ export * from './page-summary';
 export * from './paging';
 export * from './popover';
 export * from './progress-indicator';
+export * from './passive-indicator';
+export * from './waterfall-indicator';
 export * from './radio';
 export * from './repeater';
 export * from './search';

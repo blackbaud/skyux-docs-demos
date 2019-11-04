@@ -48,6 +48,8 @@ import {
   SkyPagingDemoComponent,
   SkyPopoverDemoComponent,
   SkyProgressIndicatorDemoComponent,
+  SkyPassiveIndicatorDemoComponent,
+  SkyWaterfallIndicatorDemoComponent,
   SkyRadioDemoComponent,
   SkyRepeaterDemoComponent,
   SkySearchDemoComponent,
@@ -885,6 +887,39 @@ export class SkyDemoService {
           fileContents: require('!!raw-loader!./popover/popover-demo.component.ts'),
           componentName: 'SkyPopoverDemoComponent',
           bootstrapSelector: 'sky-popover-demo'
+        }
+      ]
+    },
+    {
+      name: 'Passive Indicator',
+      component: SkyPassiveIndicatorDemoComponent,
+      files: [
+        {
+          name: 'passive-indicator-demo.component.html',
+          fileContents: require('!!raw-loader!./passive-indicator/passive-indicator-demo.component.html')
+        },
+        {
+          name: 'passive-indicator-demo.component.scss',
+          fileContents: require('!!raw-loader!./passive-indicator/passive-indicator-demo.component.scss')
+        },
+        {
+          name: 'passive-indicator-demo.component.ts',
+          fileContents: require('!!raw-loader!./passive-indicator/passive-indicator-demo.component.ts'),
+          componentName: 'SkyPassiveIndicatorDemoComponent',
+          bootstrapSelector: 'sky-passive-indicator-demo'
+        },
+        {
+          name: 'passive-indicator-demo-form.component.html',
+          fileContents: require('!!raw-loader!./passive-indicator/passive-indicator-demo-form.component.html')
+        },
+        {
+          name: 'passive-indicator-demo-form.component.ts',
+          fileContents: require('!!raw-loader!./passive-indicator/passive-indicator-demo-form.component.ts'),
+          componentName: 'SkyPassiveIndicatorDemoFormComponent'
+        },
+        {
+          name: 'passive-indicator-demo-context.ts',
+          fileContents: require('!!raw-loader!./passive-indicator/passive-indicator-demo-context.ts')
         }
       ]
     },
