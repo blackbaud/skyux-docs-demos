@@ -21,27 +21,28 @@ import {
 import 'rxjs/add/operator/take';
 
 import {
-  SkyPassiveIndicatorDemoContext
-} from './passive-indicator-demo-context';
+  SkyProgressIndicatorWaterfallDemoContext
+} from './progress-indicator-waterfall-demo-context';
 
 import {
-  SkyPassiveIndicatorDemoFormComponent
-} from './passive-indicator-demo-form.component';
+  SkyProgressIndicatorWaterfallDemoFormComponent
+} from './progress-indicator-waterfall-demo-form.component';
 
 @Component({
-  selector: 'sky-passive-indicator-demo',
-  templateUrl: './passive-indicator-demo.component.html',
-  styleUrls: ['./passive-indicator-demo.component.scss'],
+  selector: 'sky-progress-indicator-waterfall-demo',
+  templateUrl: './progress-indicator-waterfall-demo.component.html',
+  styleUrls: ['./progress-indicator-waterfall-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SkyPassiveIndicatorDemoComponent {
+export class SkyProgressIndicatorWaterfallDemoComponent {
 
   public activeIndex = 0;
+
   public progressMessageStream = new Subject<SkyProgressIndicatorMessageType>();
 
   constructor(
-    private modal: SkyModalService,
-    private changeDetector: ChangeDetectorRef
+    private changeDetector: ChangeDetectorRef,
+    private modal: SkyModalService
   ) { }
 
   public configureConnection(isProgress: boolean): void {
@@ -91,15 +92,17 @@ export class SkyPassiveIndicatorDemoComponent {
     this.progressMessageStream.next(SkyProgressIndicatorMessageType.Progress);
   }
 
-  private openModalForm(context: SkyPassiveIndicatorDemoContext, isProgress: boolean): void {
-    let modalForm = this.modal.open(SkyPassiveIndicatorDemoFormComponent, [{
-      provide: SkyPassiveIndicatorDemoContext,
+  private openModalForm(context: SkyProgressIndicatorWaterfallDemoContext, isProgress: boolean): void {
+    const modalForm = this.modal.open(SkyProgressIndicatorWaterfallDemoFormComponent, [{
+      provide: SkyProgressIndicatorWaterfallDemoContext,
       useValue: context
     }]);
+
     modalForm.closed.take(1).subscribe((args: SkyModalCloseArgs) => {
       if (args.reason === 'save' && isProgress) {
         this.progress();
       }
     });
   }
+
 }

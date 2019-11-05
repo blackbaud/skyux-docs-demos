@@ -1,14 +1,18 @@
-<h2>Progress Indicator</h2>
+<h2>
+  Progress Indicator
+</h2>
 
 <sky-progress-indicator
-  id="waterfall-indicator"
+  id="progress-indicator-waterfall"
   [messageStream]="progressMessageStream"
   [startingIndex]="2"
   (progressChanges)="updateIndex($event)"
   #progressIndicator
 >
 
-  <sky-progress-indicator-title>Setup my connection</sky-progress-indicator-title>
+  <sky-progress-indicator-title>
+    Setup my connection
+  </sky-progress-indicator-title>
 
   <sky-progress-indicator-item
     title="Configure connection"
@@ -35,20 +39,20 @@
     title="Select remote server"
   >
     <div *ngIf="activeIndex >= 1">
-        <button *ngIf="activeIndex === 1"
-          class="sky-btn sky-btn-primary"
-          type="button"
-          (click)="setServer(true)"
-        >
-          Select server
-        </button>
-        <button *ngIf="activeIndex > 1"
-          class="sky-btn sky-btn-link"
-          type="button"
-          (click)="setServer(false)"
-        >
-          Change server
-        </button>
+      <button *ngIf="activeIndex === 1"
+        class="sky-btn sky-btn-primary"
+        type="button"
+        (click)="setServer(true)"
+      >
+        Select server
+      </button>
+      <button *ngIf="activeIndex > 1"
+        class="sky-btn sky-btn-link"
+        type="button"
+        (click)="setServer(false)"
+      >
+        Change server
+      </button>
     </div>
   </sky-progress-indicator-item>
 
@@ -56,20 +60,20 @@
     title="Test connection"
   >
     <div *ngIf="activeIndex >= 2">
-        <button *ngIf="activeIndex === 2"
-          class="sky-btn sky-btn-primary"
-          type="button"
-          (click)="testConnection(true)"
-        >
-          Test connection
-        </button>
-        <button *ngIf="activeIndex > 2"
-          class="sky-btn sky-btn-link"
-          type="button"
-          (click)="testConnection(false)"
-        >
-          Retest connection
-        </button>
+      <button *ngIf="activeIndex === 2"
+        class="sky-btn sky-btn-primary"
+        type="button"
+        (click)="testConnection(true)"
+      >
+        Test connection
+      </button>
+      <button *ngIf="activeIndex > 2"
+        class="sky-btn sky-btn-link"
+        type="button"
+        (click)="testConnection(false)"
+      >
+        Retest connection
+      </button>
     </div>
   </sky-progress-indicator-item>
 
@@ -77,13 +81,13 @@
     title="Turn on connection"
   >
     <div *ngIf="activeIndex >= 3">
-        <button *ngIf="activeIndex === 3"
-          class="sky-btn sky-btn-primary"
-          type="button"
-          (click)="alertMessage('Form completed')"
-        >
-          Turn on
-        </button>
+      <button *ngIf="activeIndex === 3"
+        class="sky-btn sky-btn-primary"
+        type="button"
+        (click)="alertMessage('Form completed')"
+      >
+        Turn on
+      </button>
     </div>
   </sky-progress-indicator-item>
 
