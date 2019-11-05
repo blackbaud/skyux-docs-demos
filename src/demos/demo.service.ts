@@ -48,6 +48,8 @@ import {
   SkyPagingDemoComponent,
   SkyPopoverDemoComponent,
   SkyProgressIndicatorDemoComponent,
+  SkyProgressIndicatorPassiveDemoComponent,
+  SkyProgressIndicatorWaterfallDemoComponent,
   SkyRadioDemoComponent,
   SkyRepeaterDemoComponent,
   SkySearchDemoComponent,
@@ -918,6 +920,55 @@ export class SkyDemoService {
         {
           name: 'progress-indicator-demo-context.ts',
           fileContents: require('!!raw-loader!./progress-indicator/progress-indicator-demo-context.ts')
+        }
+      ]
+    },
+    {
+      name: 'Progress indicator passive',
+      component: SkyProgressIndicatorPassiveDemoComponent,
+      files: [
+        {
+          name: 'progress-indicator-passive-demo.component.html',
+          fileContents: require('!!raw-loader!./progress-indicator-passive/progress-indicator-passive-demo.component.html')
+        },
+        {
+          name: 'progress-indicator-passive-demo.component.ts',
+          fileContents: require('!!raw-loader!./progress-indicator-passive/progress-indicator-passive-demo.component.ts'),
+          componentName: 'SkyProgressIndicatorPassiveDemoComponent',
+          bootstrapSelector: 'sky-progress-indicator-passive-demo'
+        }
+      ]
+    },
+    {
+      name: 'Progress indicator waterfall',
+      component: SkyProgressIndicatorWaterfallDemoComponent,
+      files: [
+        {
+          name: 'progress-indicator-waterfall-demo.component.html',
+          fileContents: require('!!raw-loader!./progress-indicator-waterfall/progress-indicator-waterfall-demo.component.html')
+        },
+        {
+          name: 'progress-indicator-waterfall-demo.component.scss',
+          fileContents: require('!!raw-loader!./progress-indicator-waterfall/progress-indicator-waterfall-demo.component.scss')
+        },
+        {
+          name: 'progress-indicator-waterfall-demo.component.ts',
+          fileContents: require('!!raw-loader!./progress-indicator-waterfall/progress-indicator-waterfall-demo.component.ts'),
+          componentName: 'SkyProgressIndicatorWaterfallDemoComponent',
+          bootstrapSelector: 'sky-progress-indicator-waterfall-demo'
+        },
+        {
+          name: 'progress-indicator-waterfall-demo-form.component.html',
+          fileContents: require('!!raw-loader!./progress-indicator-waterfall/progress-indicator-waterfall-demo-form.component.html')
+        },
+        {
+          name: 'progress-indicator-waterfall-demo-form.component.ts',
+          fileContents: require('!!raw-loader!./progress-indicator-waterfall/progress-indicator-waterfall-demo-form.component.ts'),
+          componentName: 'SkyProgressIndicatorWaterfallDemoFormComponent'
+        },
+        {
+          name: 'progress-indicator-waterfall-demo-context.ts',
+          fileContents: require('!!raw-loader!./progress-indicator-waterfall/progress-indicator-waterfall-demo-context.ts')
         }
       ]
     },
