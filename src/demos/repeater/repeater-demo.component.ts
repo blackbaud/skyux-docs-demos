@@ -11,6 +11,7 @@ import {
 export class SkyRepeaterDemoComponent {
   public items: any[];
   public expandMode = 'single';
+  public reorderable = false;
   public selectable = false;
 
   constructor() {

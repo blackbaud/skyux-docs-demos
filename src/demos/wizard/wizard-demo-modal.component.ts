@@ -1,5 +1,4 @@
 import {
-  ChangeDetectorRef,
   Component
 } from '@angular/core';
 
@@ -17,10 +16,15 @@ import {
   templateUrl: './wizard-demo-modal.component.html'
 })
 export class SkyWizardDemoModalComponent {
+
   public activeIndex = 0;
+
   public title = 'Wizard example';
+
   public requiredValue1: string;
+
   public requiredValue2: boolean;
+
   public displayMode = SkyProgressIndicatorDisplayMode.Horizontal;
 
   public get requirementsMet(): boolean {
@@ -34,17 +38,11 @@ export class SkyWizardDemoModalComponent {
     }
   }
 
-  public get isDone(): boolean {
-    return this.activeIndex === 2;
-  }
-
   constructor(
-    public instance: SkyModalInstance,
-    private changeDetector: ChangeDetectorRef
+    public instance: SkyModalInstance
   ) { }
 
   public updateIndex(changes: SkyProgressIndicatorChange): void {
     this.activeIndex = changes.activeIndex;
-    this.changeDetector.detectChanges();
   }
 }
