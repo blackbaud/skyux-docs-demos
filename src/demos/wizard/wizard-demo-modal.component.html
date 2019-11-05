@@ -10,39 +10,39 @@
     >
 
       <sky-progress-indicator-item
-        title="Do the first thing"
+        title="First step"
       >
         <div>
-          <label>
-            Enter text to continue:
-            <input
-              class="sky-form-control"
-              type="text"
-              [(ngModel)]="requiredValue1"
-            />
+          <label class="sky-control-label sky-control-label-required">
+            Enter text to continue
           </label>
+          <input
+            class="sky-form-control"
+            type="text"
+            [(ngModel)]="requiredValue1"
+          />
         </div>
       </sky-progress-indicator-item>
 
       <sky-progress-indicator-item
-        title="Do the second thing"
+        title="Second step"
       >
         <div>
           <sky-checkbox
             [(ngModel)]="requiredValue2"
           >
             <sky-checkbox-label>
-              Select this checkbox to enable step 3.
+              Select to continue
             </sky-checkbox-label>
           </sky-checkbox>
         </div>
       </sky-progress-indicator-item>
 
       <sky-progress-indicator-item
-        title="Do the third thing"
+        title="Third step"
       >
         <div>
-          Some other content.
+          Additional content or tasks go here.
         </div>
       </sky-progress-indicator-item>
 
@@ -54,19 +54,19 @@
       [progressIndicator]="wizardDemo"
     >
     </sky-progress-indicator-nav-button>
-    <sky-progress-indicator-nav-button *ngIf="!isDone"
+    <sky-progress-indicator-nav-button
       buttonType="next"
       [disabled]="!requirementsMet"
       [progressIndicator]="wizardDemo"
     >
     </sky-progress-indicator-nav-button>
-    <button *ngIf="isDone"
-      class="sky-btn sky-btn-default"
-      type="button"
+    <sky-progress-indicator-nav-button
+      buttonType="finish"
+      buttonText="Save and close"
+      [progressIndicator]="wizardDemo"
       (click)="instance.close()"
     >
-      Save and close
-    </button>
+    </sky-progress-indicator-nav-button>
     <button
       class="sky-btn sky-btn-link"
       type="button"
