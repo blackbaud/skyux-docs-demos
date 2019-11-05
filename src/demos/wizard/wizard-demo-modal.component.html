@@ -10,39 +10,39 @@
     >
 
       <sky-progress-indicator-item
-        title="Do the first thing"
+        title="First step"
       >
         <div>
-          <label>
-            Enter text to continue:
-            <input
-              class="sky-form-control"
-              type="text"
-              [(ngModel)]="requiredValue1"
-            />
+          <label class="sky-control-label sky-control-label-required">
+            Enter text to continue
           </label>
+          <input
+            class="sky-form-control"
+            type="text"
+            [(ngModel)]="requiredValue1"
+          />
         </div>
       </sky-progress-indicator-item>
 
       <sky-progress-indicator-item
-        title="Do the second thing"
+        title="Second step"
       >
         <div>
           <sky-checkbox
             [(ngModel)]="requiredValue2"
           >
             <sky-checkbox-label>
-              Select this checkbox to enable step 3.
+              Select to continue
             </sky-checkbox-label>
           </sky-checkbox>
         </div>
       </sky-progress-indicator-item>
 
       <sky-progress-indicator-item
-        title="Do the third thing"
+        title="Third step"
       >
         <div>
-          Some other content.
+          Additional content or tasks go here.
         </div>
       </sky-progress-indicator-item>
 
