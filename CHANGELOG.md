@@ -1,4 +1,4 @@
-# 1.4.1 (2019-11-11)
+# 1.4.1 (2019-11-15)
 
 - Fixed the wizard demo to properly show the `Next` button after clicking `Previous`. [#30](https://github.com/blackbaud/skyux2-demos/pull/30)
 
