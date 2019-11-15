@@ -46,7 +46,6 @@ import {
   SkyNumericDemoComponent,
   SkyPageSummaryDemoComponent,
   SkyPagingDemoComponent,
-  SkyPopoverDemoComponent,
   SkyProgressIndicatorDemoComponent,
   SkyProgressIndicatorPassiveDemoComponent,
   SkyProgressIndicatorWaterfallDemoComponent,
@@ -867,26 +866,6 @@ export class SkyDemoService {
           fileContents: require('!!raw-loader!./paging/paging-demo.component.ts'),
           componentName: 'SkyPagingDemoComponent',
           bootstrapSelector: 'sky-paging-demo'
-        }
-      ]
-    },
-    {
-      name: 'Popover',
-      component: SkyPopoverDemoComponent,
-      files: [
-        {
-          name: 'popover-demo.component.html',
-          fileContents: require('!!raw-loader!./popover/popover-demo.component.html')
-        },
-        {
-          name: 'popover-demo.component.scss',
-          fileContents: require('!!raw-loader!./popover/popover-demo.component.scss')
-        },
-        {
-          name: 'popover-demo.component.ts',
-          fileContents: require('!!raw-loader!./popover/popover-demo.component.ts'),
-          componentName: 'SkyPopoverDemoComponent',
-          bootstrapSelector: 'sky-popover-demo'
         }
       ]
     },
