@@ -35,7 +35,6 @@ export * from './navbar';
 export * from './numeric';
 export * from './page-summary';
 export * from './paging';
-export * from './progress-indicator';
 export * from './progress-indicator-passive';
 export * from './progress-indicator-waterfall';
 export * from './radio';
