@@ -1,3 +1,7 @@
+# 1.4.2 (2019-11-19)
+
+- Remove the combined progress indicator demo and the popover demo. [#32](https://github.com/blackbaud/skyux2-demos/pull/32) and [#34](https://github.com/blackbaud/skyux2-demos/pull/34)
+
 # 1.4.1 (2019-11-15)
 
 - Fixed the wizard demo to properly show the `Next` button after clicking `Previous`. [#30](https://github.com/blackbaud/skyux2-demos/pull/30)
