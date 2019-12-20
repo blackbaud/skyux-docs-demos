@@ -1,0 +1,8 @@
+.sky-demo-repeater-flex {
+  display:flex;
+  flex-wrap: wrap;
+
+  div:first-child {
+    flex-grow: 1;
+  }
+}

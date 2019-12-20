@@ -9,14 +9,14 @@
     [reorderable]="reorderable"
     [selectable]="selectable"
   >
-    <sky-repeater-item-title>
-      <div class="pull-left">
+    <sky-repeater-item-title
+      class="sky-demo-repeater-flex"
+    >
+      <div>
         {{item.title}}
       </div>
-      <div class="pull-right">
-        <span class="label">
-          {{item.status}}
-        </span>
+      <div>
+        {{item.status}}
       </div>
     </sky-repeater-item-title>
     <sky-repeater-item-context-menu>
