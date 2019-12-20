@@ -1,6 +1,6 @@
 # 1.4.3 (2019-12-20)
 
-- Fixed repeater demo to no longer show visual artifacts when a repeater item is focused. [#36](https://github.com/blackbaud/skyux2-demos/pull/36)
+- Fixed the repeater demo to no longer show visual artifacts when a repeater item is focused. [#36](https://github.com/blackbaud/skyux2-demos/pull/36)
 
 # 1.4.2 (2019-11-19)
 
