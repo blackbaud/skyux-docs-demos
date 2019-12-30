@@ -942,6 +942,10 @@ export class SkyDemoService {
           fileContents: require('!!raw-loader!./repeater/repeater-demo.component.html')
         },
         {
+          name: 'repeater-demo.component.scss',
+          fileContents: require('!!raw-loader!./repeater/repeater-demo.component.scss')
+        },
+        {
           name: 'repeater-demo.component.ts',
           fileContents: require('!!raw-loader!./repeater/repeater-demo.component.ts'),
           componentName: 'SkyRepeaterDemoComponent',
