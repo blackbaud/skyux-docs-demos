@@ -1,6 +1,6 @@
 # 1.4.4 (2019-12-31)
 
-- Fixed the repeater demo to include missing scss file. [#37](https://github.com/blackbaud/skyux2-demos/pull/37)
+- Fixed the repeater demo to include missing CSS styles. [#37](https://github.com/blackbaud/skyux2-demos/pull/37)
 
 # 1.4.3 (2019-12-20)
 
