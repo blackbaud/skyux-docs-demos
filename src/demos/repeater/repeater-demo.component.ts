@@ -6,9 +6,7 @@ import {
 @Component({
   selector: 'sky-repeater-demo',
   templateUrl: './repeater-demo.component.html',
-  styleUrls: [
-    './repeater-demo.component.scss'
-  ],
+  styleUrls: ['./repeater-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkyRepeaterDemoComponent {

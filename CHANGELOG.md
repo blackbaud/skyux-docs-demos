@@ -1,3 +1,7 @@
+# 1.4.4 (2020-01-03)
+
+- Fixed the repeater demo to include missing CSS styles. [#38](https://github.com/blackbaud/skyux2-demos/pull/38)
+
 # 1.4.3 (2019-12-20)
 
 - Fixed the repeater demo to no longer show visual artifacts when a repeater item is focused. [#36](https://github.com/blackbaud/skyux2-demos/pull/36)
