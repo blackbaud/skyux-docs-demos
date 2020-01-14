@@ -1,3 +1,7 @@
+# 1.4.5 (2020-01-06)
+
+- Fixed the button styles in the colorpicker and toast demos. [#39](https://github.com/blackbaud/skyux2-demos/pull/39)
+
 # 1.4.4 (2020-01-03)
 
 - Fixed the repeater demo to include missing CSS styles. [#38](https://github.com/blackbaud/skyux2-demos/pull/38)
