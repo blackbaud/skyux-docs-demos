@@ -30,9 +30,7 @@ export class SkyListViewChecklistDemoComponent {
 
   public selectedItemsChange(selectedMap: Map<string, boolean>) {
     this.items.take(1).subscribe((items) => {
-      this.selectedItems = items.filter((item) => {
-        return selectedMap.get(item.id);
-      });
+      this.selectedItems = items.filter(item => selectedMap.get(item.id));
     });
   }
 }
