@@ -1,3 +1,7 @@
+# 1.4.6 (2020-02-18)
+
+- Updated the code sample for the list view checklist demo. [#41](https://github.com/blackbaud/skyux2-demos/pull/41)
+
 # 1.4.5 (2020-01-06)
 
 - Fixed the button styles in the colorpicker and toast demos. [#39](https://github.com/blackbaud/skyux2-demos/pull/39)
