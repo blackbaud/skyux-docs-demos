@@ -1,3 +1,7 @@
+# 1.4.7 (2020-05-07)
+
+- Fixed the colorpicker demo to remove redundant examples. [#44](https://github.com/blackbaud/skyux2-demos/pull/44)
+
 # 1.4.6 (2020-02-18)
 
 - Updated the code sample for the list view checklist demo. [#41](https://github.com/blackbaud/skyux2-demos/pull/41)
