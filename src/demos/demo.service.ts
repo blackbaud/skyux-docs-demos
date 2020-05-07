@@ -190,26 +190,6 @@ export class SkyDemoService {
       component: SkyColorpickerDemoComponent,
       files: [
         {
-          name: 'colorpicker-reactive-demo.component.html',
-          fileContents: require('!!raw-loader!./colorpicker/colorpicker-reactive-demo.component.html')
-        },
-        {
-          name: 'colorpicker-reactive-demo.component.ts',
-          fileContents: require('!!raw-loader!./colorpicker/colorpicker-reactive-demo.component.ts'),
-          componentName: 'SkyColorpickerReactiveDemoComponent',
-          bootstrapSelector: 'sky-colorpicker-reactive-demo'
-        },
-        {
-          name: 'colorpicker-template-driven-demo.component.html',
-          fileContents: require('!!raw-loader!./colorpicker/colorpicker-template-driven-demo.component.html')
-        },
-        {
-          name: 'colorpicker-template-driven-demo.component.ts',
-          fileContents: require('!!raw-loader!./colorpicker/colorpicker-template-driven-demo.component.ts'),
-          componentName: 'SkyColorpickerTemplateDrivenDemoComponent',
-          bootstrapSelector: 'sky-colorpicker-template-driven-demo'
-        },
-        {
           name: 'colorpicker-demo.component.html',
           fileContents: require('!!raw-loader!./colorpicker/colorpicker-demo.component.html')
         },
