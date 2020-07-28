@@ -4,70 +4,256 @@ import {
 } from '@angular/core';
 
 import {
-  SkyActionButtonDemoComponent,
-  SkyAlertDemoComponent,
-  SkyAutocompleteDemoComponent,
-  SkyAvatarDemoComponent,
-  SkyCardDemoComponent,
-  SkyCheckboxDemoComponent,
-  SkyColorpickerDemoComponent,
-  SkyConfirmDemoComponent,
-  SkyDatepickerDemoComponent,
-  SkyDefinitionListDemoComponent,
-  SkyDropdownDemoComponent,
-  SkyEmailValidationDemoComponent,
-  SkyErrorDemoComponent,
-  SkyFileAttachmentDemoComponent,
-  SkyFilterDemoComponent,
-  SkyFilterInlineDemoComponent,
-  SkyFluidGridDemoComponent,
-  SkyFlyoutDemoComponent,
-  SkyFuzzyDatepickerDemoComponent,
-  SkyGridDemoComponent,
-  SkyHelpInlineDemoComponent,
-  SkyIconDemoComponent,
-  SkyInfiniteScrollDemoComponent,
-  SkyKeyInfoDemoComponent,
-  SkyLabelDemoComponent,
-  SkyLinkRecordsDemoComponent,
-  SkyListDemoComponent,
-  SkyListFiltersDemoComponent,
-  SkyListFiltersInlineDemoComponent,
-  SkyListPagingDemoComponent,
-  SkyListProviderDemoComponent,
-  SkyListToolbarDemoComponent,
-  SkyListToolbarCustomDemoComponent,
-  SkyListViewChecklistDemoComponent,
-  SkyListViewGridDemoComponent,
-  SkyLookupDemoComponent,
-  SkyMediaQueryDemoComponent,
-  SkyModalDemoComponent,
-  SkyNavbarDemoComponent,
-  SkyNumericDemoComponent,
-  SkyPageSummaryDemoComponent,
-  SkyPagingDemoComponent,
-  SkyProgressIndicatorPassiveDemoComponent,
-  SkyProgressIndicatorWaterfallDemoComponent,
-  SkyRadioDemoComponent,
-  SkyRepeaterDemoComponent,
-  SkySearchDemoComponent,
-  SkySectionedFormDemoComponent,
-  SkySelectFieldDemoComponent,
-  SkySortDemoComponent,
-  SkyTabsDemoComponent,
-  SkyTextExpandDemoComponent,
-  SkyTextExpandRepeaterDemoComponent,
-  SkyTextHighlightDemoComponent,
-  SkyTileDemoComponent,
-  SkyTimepickerDemoComponent,
-  SkyToastDemoComponent,
-  SkyTokensDemoComponent,
-  SkyToolbarDemoComponent,
-  SkyUrlValidationDemoComponent,
-  SkyVerticalTabsDemoComponent,
-  SkyWaitDemoComponent,
+  SkyActionButtonDemoComponent
+} from '../demos/action-button/action-button-demo.component';
+
+import {
+  SkyAlertDemoComponent
+} from '../demos/alert/alert-demo.component';
+
+import {
+  SkyAutocompleteDemoComponent
+} from '../demos/autocomplete/autocomplete-demo.component';
+
+import {
+  SkyAvatarDemoComponent
+} from '../demos/avatar/avatar-demo.component';
+
+import {
+  SkyCardDemoComponent
+} from '../demos/card/card-demo.component';
+
+import {
+  SkyCheckboxDemoComponent
+} from '../demos/checkbox/checkbox-demo.component';
+
+import {
+  SkyColorpickerDemoComponent
+} from '../demos/colorpicker/colorpicker-demo.component';
+
+import {
+  SkyConfirmDemoComponent
+} from '../demos/confirm/confirm-demo.component';
+
+import {
+  SkyDatepickerDemoComponent
+} from '../demos/datepicker/datepicker-demo.component';
+
+import {
+  SkyDefinitionListDemoComponent
+} from '../demos/definition-list/definition-list-demo.component';
+
+import {
+  SkyDropdownDemoComponent
+} from '../demos/dropdown/dropdown-demo.component';
+
+import {
+  SkyEmailValidationDemoComponent
+} from '../demos/email-validation/email-validation-demo.component';
+
+import {
+  SkyErrorDemoComponent
+} from '../demos/error/error-demo.component';
+
+import {
+  SkyFileAttachmentDemoComponent
+} from '../demos/file-attachment/file-attachment-demo.component';
+
+import {
+  SkyFilterDemoComponent
+} from '../demos/filter/filter-demo.component';
+
+import {
+  SkyFilterInlineDemoComponent
+} from '../demos/filter/filter-inline-demo.component';
+
+import {
+  SkyFluidGridDemoComponent
+} from '../demos/fluid-grid/fluid-grid-demo.component';
+
+import {
+  SkyFlyoutDemoComponent
+} from '../demos/flyout/flyout-demo.component';
+
+import {
+  SkyFuzzyDatepickerDemoComponent
+} from '../demos/datepicker/fuzzy-datepicker-demo.component';
+
+import {
+  SkyGridDemoComponent
+} from '../demos/grid/grid-demo.component';
+
+import {
+  SkyHelpInlineDemoComponent
+} from '../demos/help-inline/help-inline-demo.component';
+
+import {
+  SkyIconDemoComponent
+} from '../demos/icon/icon-demo.component';
+
+import {
+  SkyInfiniteScrollDemoComponent
+} from '../demos/infinite-scroll/infinite-scroll-demo.component';
+
+import {
+  SkyKeyInfoDemoComponent
+} from '../demos/key-info/key-info-demo.component';
+
+import {
+  SkyLabelDemoComponent
+} from '../demos/label/label-demo.component';
+
+import {
+  SkyLinkRecordsDemoComponent
+} from '../demos/link-records/link-records-demo.component';
+
+import {
+  SkyListDemoComponent
+} from '../demos/list/list-demo.component';
+
+import {
+  SkyListProviderDemoComponent
+} from '../demos/list/list-provider-demo.component';
+
+import {
+  SkyListFiltersDemoComponent
+} from '../demos/list-filters/list-filters-demo.component';
+
+import {
+  SkyListFiltersInlineDemoComponent
+} from '../demos/list-filters/list-filters-inline-demo.component';
+
+import {
+  SkyListPagingDemoComponent
+} from '../demos/list-paging/list-paging-demo.component';
+
+import {
+  SkyListToolbarCustomDemoComponent
+} from '../demos/list-toolbar/list-toolbar-custom-demo.component';
+
+import {
+  SkyListToolbarDemoComponent
+} from '../demos/list-toolbar/list-toolbar-demo.component';
+
+import {
+  SkyListViewChecklistDemoComponent
+} from '../demos/list-view-checklist/list-view-checklist-demo.component';
+
+import {
+  SkyListViewGridDemoComponent
+} from '../demos/list-view-grid/list-view-grid-demo.component';
+
+import {
+  SkyLookupDemoComponent
+} from '../demos/lookup/lookup-demo.component';
+
+import {
+  SkyMediaQueryDemoComponent
+} from '../demos/media-queries/media-query-demo.component';
+
+import {
+  SkyModalDemoComponent
+} from './modal/modal-demo.component';
+
+import {
+  SkyNavbarDemoComponent
+} from './navbar/navbar-demo.component';
+
+import {
+  SkyNumericDemoComponent
+} from './numeric/numeric-demo.component';
+
+import {
+  SkyPageSummaryDemoComponent
+} from './page-summary/page-summary-demo.component';
+
+import {
+  SkyPagingDemoComponent
+} from './paging/paging-demo.component';
+
+import {
+  SkyProgressIndicatorPassiveDemoComponent
+} from './progress-indicator-passive/progress-indicator-passive-demo.component';
+
+import {
+  SkyProgressIndicatorWaterfallDemoComponent
+} from './progress-indicator-waterfall/progress-indicator-waterfall-demo.component';
+
+import {
+  SkyRadioDemoComponent
+} from './radio/radio-demo.component';
+
+import {
+  SkyRepeaterDemoComponent
+} from './repeater/repeater-demo.component';
+
+import {
+  SkySearchDemoComponent
+} from './search/search-demo.component';
+
+import {
+  SkySectionedFormDemoComponent
+} from './sectioned-form/sectioned-form-demo.component';
+
+import {
+  SkySelectFieldDemoComponent
+} from './select-field/select-field-demo.component';
+
+import {
+  SkySortDemoComponent
+} from './sort/sort-demo.component';
+
+import {
+  SkyTabsDemoComponent
+} from './tabs/tabs-demo.component';
+
+import {
+  SkyTextExpandDemoComponent
+} from './text-expand/text-expand-demo.component';
+
+import {
+  SkyTextExpandRepeaterDemoComponent
+} from './text-expand-repeater/text-expand-repeater-demo.component';
+
+import {
+  SkyTextHighlightDemoComponent
+} from './text-highlight/text-highlight-demo.component';
+
+import {
+  SkyTileDemoComponent
+} from './tile/tile-demo.component';
+
+import {
+  SkyTimepickerDemoComponent
+} from './timepicker/timepicker-demo.component';
+
+import {
+  SkyToastDemoComponent
+} from './toast/toast-demo.component';
+
+import {
+  SkyTokensDemoComponent
+} from './tokens/tokens-demo.component';
+
+import {
+  SkyToolbarDemoComponent
+} from './toolbar/toolbar-demo.component';
+
+import {
+  SkyUrlValidationDemoComponent
+} from './url-validation/url-validation-demo.component';
+
+import {
+  SkyVerticalTabsDemoComponent
+} from './vertical-tabs/vertical-tabs-demo.component';
+
+import {
+  SkyWaitDemoComponent
+} from './wait/wait-demo.component';
+
+import {
   SkyWizardDemoComponent
-} from './index';
+} from './wizard/wizard-demo.component';
 // #endregion
 
 /**
