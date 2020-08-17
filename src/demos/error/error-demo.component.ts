@@ -24,9 +24,9 @@ export class SkyErrorDemoComponent {
 
   public openErrorModal() {
     const config: ErrorModalConfig = {
-      errorTitle: 'Something bad happened!',
-      errorDescription: 'Try to refresh the page or come back later.',
-      errorCloseText: 'OK'
+      errorTitle: 'Something went wrong.',
+      errorDescription: 'Close the modal, and come back later.',
+      errorCloseText: 'Close'
     };
 
     this.errorService.open(config);
