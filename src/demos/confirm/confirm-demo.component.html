@@ -11,24 +11,8 @@
     aria-haspopup="dialog"
     class="sky-btn sky-btn-default sky-margin-inline-default"
     type="button"
-    (click)="openYesCancelConfirm()">
-    Yes/cancel confirm
-  </button>
-
-  <button
-    aria-haspopup="dialog"
-    class="sky-btn sky-btn-default sky-margin-inline-default"
-    type="button"
     (click)="openYesCancelConfirmWithBody()">
-    Confirm with body
-  </button>
-
-  <button
-    aria-haspopup="dialog"
-    class="sky-btn sky-btn-default sky-margin-inline-default"
-    type="button"
-    (click)="openYesNoCancelConfirm()">
-    Yes/no/cancel confirm
+    Yes/cancel confirm with body
   </button>
 
   <button
@@ -41,7 +25,7 @@
 </div>
 
 <sky-alert *ngIf="selectedAction && selectedText">
-  You selected button "{{ selectedText }}" which has an action of "{{ selectedAction }}."
+  You selected the "{{ selectedText }}" button, which has an action of "{{ selectedAction }}."
 </sky-alert>
 <sky-alert *ngIf="selectedAction && !selectedText">
   You selected the "{{ selectedAction }}" action.

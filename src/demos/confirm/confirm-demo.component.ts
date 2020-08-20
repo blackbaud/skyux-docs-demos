@@ -25,20 +25,8 @@ export class SkyConfirmDemoComponent {
 
   public openOKConfirm() {
     const dialog: SkyConfirmInstance = this.confirmService.open({
-      message: 'Do you wish to continue?',
+      message: 'Use the OK button type for information that does not require user action.',
       type: SkyConfirmType.OK
-    });
-
-    dialog.closed.subscribe((result: any) => {
-      this.selectedText = undefined;
-      this.selectedAction = result.action;
-    });
-  }
-
-  public openYesCancelConfirm() {
-    const dialog: SkyConfirmInstance = this.confirmService.open({
-      message: 'Do you wish to continue?',
-      type: SkyConfirmType.YesCancel
     });
 
     dialog.closed.subscribe((result: any) => {
@@ -49,21 +37,9 @@ export class SkyConfirmDemoComponent {
 
   public openYesCancelConfirmWithBody() {
     const dialog: SkyConfirmInstance = this.confirmService.open({
-      message: 'Do you wish to continue?',
-      body: 'This could be dangerous!',
+      message: 'Use the YesCancel button type to let users confirm or cancel.',
+      body: 'Do not use a YesCancel button type if users could be confused about what the Yes button does. Use a Custom button type instead and provide labels that clearly indicate the action occurs when users select the button.',
       type: SkyConfirmType.YesCancel
-    });
-
-    dialog.closed.subscribe((result: any) => {
-      this.selectedText = undefined;
-      this.selectedAction = result.action;
-    });
-  }
-
-  public openYesNoCancelConfirm() {
-    const dialog: SkyConfirmInstance = this.confirmService.open({
-      message: 'Do you wish to continue?',
-      type: SkyConfirmType.YesNoCancel
     });
 
     dialog.closed.subscribe((result: any) => {
@@ -74,13 +50,14 @@ export class SkyConfirmDemoComponent {
 
   public openCustomConfirm() {
     const buttons = [
-      { text: '1', action: 'foo', styleType: 'primary' },
-      { text: '2', action: 'bar' },
-      { text: '3', action: 'baz', autofocus: true }
+      { text: 'Save', action: 'save', styleType: 'primary' },
+      { text: 'Delete', action: 'delete' },
+      { text: 'Cancel', action: 'cancel', autofocus: true }
     ];
 
     const dialog: SkyConfirmInstance = this.confirmService.open({
-      message: 'What option are you going to select?',
+      message: 'Use the Custom button type to define your own buttons.',
+      body: 'Labels should clearly indicate the action occurs when users select the button.',
       type: SkyConfirmType.Custom,
       buttons
     });
