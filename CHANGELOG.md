@@ -1,3 +1,7 @@
+# 1.4.8 (2020-08-20)
+
+- Fixed the confirm demo to align better with design guidelines for button labels. [#51](https://github.com/blackbaud/skyux2-demos/pull/51)
+
 # 1.4.7 (2020-05-07)
 
 - Fixed the colorpicker demo to remove redundant examples. [#44](https://github.com/blackbaud/skyux2-demos/pull/44)
